@@ -1,0 +1,6 @@
+{
+  "name": "Pañalera Arociris",
+  "description": "Una tienda online de artículos para bebés que vende pañales, higiene, ropa, calzado y rodados, con carrito de compras, pasarela de pago segura simulada, historial de pedidos y seguimiento de envíos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
