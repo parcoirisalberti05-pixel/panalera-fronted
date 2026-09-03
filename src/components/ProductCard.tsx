@@ -116,8 +116,8 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
             <span className="text-lg md:text-xl font-black text-slate-800">
               {formatPrice(product.price)}
             </span>
-            <span className={`text-[10px] font-bold ${product.stock <= 5 ? 'text-rose-500' : 'text-slate-400'}`}>
-              {product.stock <= 5 ? `¡Solo ${product.stock} restantes!` : 'Disponible'}
+            <span className={`text-[10px] font-bold ${product.stock <= 2 ? 'text-rose-500' : 'text-slate-400'}`}>
+              {product.stock === 0 ? 'Sin stock' : product.stock <= 2 ? '¡Últimas unidades!' : 'Disponible'}
             </span>
           </div>
 
