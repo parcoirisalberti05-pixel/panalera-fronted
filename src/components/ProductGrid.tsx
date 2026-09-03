@@ -20,7 +20,7 @@ interface StockReal {
 
 // URL del backend local. Si en algún momento el backend corre en otra
 // dirección/puerto, solo hay que cambiar esta constante.
-const API_URL = 'http://localhost:3000/api/productos-web';
+const API_URL = 'https://panalera-backend-production.up.railway.app/api/productos-web';
 
 export default function ProductGrid({
   activeCategory,
