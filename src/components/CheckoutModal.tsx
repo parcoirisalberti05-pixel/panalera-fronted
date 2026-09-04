@@ -72,20 +72,47 @@ export default function CheckoutModal({
     return true;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
 
     // Transition to processing loader
     setStage('processing');
 
-    // Simulate SSL verified secure payment processing
-    setTimeout(() => {
-      const orderId = 'PP-' + Math.floor(100000 + Math.random() * 900000);
-      const trackingNumber = 'ENV-' + Math.floor(1000000 + Math.random() * 9000000) + '-AR';
-      
+    try {
       const cardBrand = getCardBrand(cardNumber);
       const last4 = cardNumber.replace(/\D/g, '').slice(-4) || '8249';
+
+      const metodoPagoTexto =
+        paymentMethod === 'card' ? cardBrand :
+        paymentMethod === 'mercadopago' ? 'Mercado Pago' :
+        'Transferencia Bancaria';
+
+      const response = await fetch('https://panalera-backend-production.up.railway.app/api/pedidos', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          cliente_nombre: shipping.name,
+          cliente_telefono: shipping.phone,
+          direccion: shipping.address,
+          localidad: shipping.city,
+          codigo_postal: shipping.zipCode,
+          items: cartItems.map(item => ({
+            id: item.product.id,
+            nombre: item.product.name,
+            precio: item.product.price,
+            cantidad: item.quantity
+          })),
+          total: total,
+          metodo_pago: metodoPagoTexto
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al crear el pedido');
+      }
+
+      const pedidoCreado = await response.json();
 
       const initialHistory: TrackingStep[] = [
         {
@@ -115,24 +142,28 @@ export default function CheckoutModal({
       ];
 
       const newOrder: Order = {
-        id: orderId,
+        id: 'PP-' + pedidoCreado.id,
         date: new Date().toLocaleDateString('es-AR'),
         items: [...cartItems],
         total: total,
         status: 'pendiente',
         shippingAddress: shipping,
         paymentMethod: {
-          cardBrand: paymentMethod === 'card' ? cardBrand : paymentMethod === 'mercadopago' ? 'Mercado Pago' : 'Transferencia Bancaria',
+          cardBrand: metodoPagoTexto,
           last4: paymentMethod === 'card' ? last4 : 'MP-Wallet'
         },
-        trackingNumber: trackingNumber,
+        trackingNumber: pedidoCreado.numero_seguimiento,
         trackingHistory: initialHistory
       };
 
       setCreatedOrder(newOrder);
       onOrderCompleted(newOrder);
       setStage('success');
-    }, 2500);
+    } catch (error) {
+      console.error(error);
+      alert('Hubo un problema al procesar tu pedido. Por favor intentá de nuevo.');
+      setStage('form');
+    }
   };
 
   return (
