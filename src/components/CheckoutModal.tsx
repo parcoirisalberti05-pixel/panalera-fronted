@@ -94,6 +94,7 @@ export default function CheckoutModal({
         body: JSON.stringify({
           cliente_nombre: shipping.name,
           cliente_telefono: shipping.phone,
+          cliente_email: email,
           direccion: shipping.address,
           localidad: shipping.city,
           codigo_postal: shipping.zipCode,
