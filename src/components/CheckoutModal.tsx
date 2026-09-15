@@ -415,14 +415,15 @@ export default function CheckoutModal({
                       )}
 
                       {/* Bank Transfer info */}
-                      {paymentMethod === 'transfer' && (
-                        <div className="p-4 bg-rose-50/30 border border-rose-100 rounded-2xl text-xs space-y-2 text-slate-650 font-medium">
-                          <p className="font-bold text-rose-500">Instrucciones para Transferencia</p>
-                          <p><strong>CBU:</strong> 0000003100012345678901</p>
-                          <p><strong>Alias:</strong> panalera.arcoiris</p>
-                          <p>Por favor, envíe el comprobante de transferencia junto con su número de orden a <strong className="text-slate-800">ayuda@arcoiris.com</strong> para validar la entrega.</p>
-                        </div>
-                      )}
+{paymentMethod === 'transfer' && (
+  <div className="p-4 bg-rose-50/30 border border-rose-100 rounded-2xl text-xs space-y-2 text-slate-650 font-medium">
+    <p className="font-bold text-rose-500">Instrucciones para Transferencia</p>
+    <p><strong>CBU:</strong> 0000003100084528520420</p>
+    <p><strong>Alias:</strong> guilleo.mp</p>
+    <p><strong>Titular:</strong> Guillermo Ocampos</p>
+    <p>Por favor, envíe el comprobante de transferencia junto con su número de orden por WhatsApp al <a href="https://wa.me/5491126127223" target="_blank" rel="noopener noreferrer" className="text-emerald-600 font-bold underline">+54 11 2612-7223</a> para validar la entrega.</p>
+  </div>
+)}
                     </div>
                   </div>
 
