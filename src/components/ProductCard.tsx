@@ -103,7 +103,7 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
         </div>
 
         {/* Name and Description */}
-        <h3 className="text-sm md:text-base font-bold text-slate-800 line-clamp-1 group-hover:text-rose-500 transition-colors duration-200">
+        <h3 className="text-sm md:text-base font-bold text-slate-800 line-clamp-2 group-hover:text-rose-500 transition-colors duration-200">
           {product.name}
         </h3>
         <p className="text-xs text-slate-500 mt-1 mb-4 line-clamp-2 flex-1 leading-relaxed">
