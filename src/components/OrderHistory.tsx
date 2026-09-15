@@ -103,9 +103,7 @@ export default function OrderHistory({
               setSearchTerm(e.target.value);
               // Auto-select first matching order
               const val = e.target.value.toLowerCase().trim();
-const matching = orders.find(o =>
-  o.id.toLowerCase() === val || o.trackingNumber.toLowerCase() === val
-);
+const matching = orders.find(o => o.trackingNumber.toLowerCase() === val);
 if (matching) setSelectedOrderId(matching.id);
 else setSelectedOrderId(null);
             }}
