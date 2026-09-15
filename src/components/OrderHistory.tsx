@@ -402,8 +402,8 @@ export default function OrderHistory({
               </div>
             ) : (
               <div className="bg-white border border-rose-50 rounded-3xl p-12 text-center text-slate-400 italic">
-                Por favor seleccione un pedido del listado para ver su detalle de envío.
-              </div>
+  Ingresá tu número de pedido o de seguimiento en el buscador para ver el detalle de tu envío.
+</div>
             )}
           </div>
         </div>
