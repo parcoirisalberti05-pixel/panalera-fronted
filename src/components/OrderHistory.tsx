@@ -34,7 +34,7 @@ export default function OrderHistory({
   const filteredOrders = orders.filter(o => {
   const term = searchTerm.toLowerCase().trim();
   if (term.length < 5) return false;
-  return o.id.toLowerCase() === term || o.trackingNumber.toLowerCase() === term;
+  return o.trackingNumer.toLowerCase() === term;
 });
   const selectedOrder = orders.find(o => o.id === selectedOrderId);
 
