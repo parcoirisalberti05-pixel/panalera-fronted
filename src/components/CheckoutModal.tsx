@@ -27,7 +27,8 @@ export default function CheckoutModal({
   const [email, setEmail] = useState('');
 
   // Payment Form State
-  const [paymentMethod, setPaymentMethod] = useState<'card' | 'mercadopago' | 'transfer'>('card');
+  const [paymentMethod, setPaymentMethod] = useState<'card' | 'efectivo' | 'transfer'>('card');
+const [cashAmount, setCashAmount] = useState('');
   const [cardNumber, setCardNumber] = useState('');
   const [cardName, setCardName] = useState('');
   const [expiry, setExpiry] = useState('');
