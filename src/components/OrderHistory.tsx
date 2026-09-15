@@ -32,11 +32,10 @@ export default function OrderHistory({
 
   // Filter orders by search term (id or tracking number)
   const filteredOrders = orders.filter(o => {
-    const term = searchTerm.toLowerCase().trim();
-    if (term === '') return true;
-    return o.id.toLowerCase().includes(term) || o.trackingNumber.toLowerCase().includes(term);
-  });
-
+  const term = searchTerm.toLowerCase().trim();
+  if (term === '') return false;
+  return o.id.toLowerCase().includes(term) || o.trackingNumber.toLowerCase().includes(term);
+});
   const selectedOrder = orders.find(o => o.id === selectedOrderId);
 
   // Format currency
