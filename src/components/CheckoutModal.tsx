@@ -312,17 +312,17 @@ const [cashAmount, setCashAmount] = useState('');
                           <span className="text-[10px] font-bold">Tarjeta</span>
                         </button>
                         <button
-                          type="button"
-                          onClick={() => setPaymentMethod('mercadopago')}
-                          className={`cursor-pointer p-3.5 border rounded-2xl flex flex-col items-center gap-1.5 transition-all ${
-                            paymentMethod === 'mercadopago'
-                              ? 'border-rose-400 bg-rose-50/50 text-rose-500 font-bold shadow-xs'
-                              : 'border-rose-50 bg-white text-slate-500 hover:border-rose-200'
-                          }`}
-                        >
-                          <span className="text-sm font-black tracking-tight text-sky-500">MP</span>
-                          <span className="text-[10px] font-bold">Mercado Pago</span>
-                        </button>
+  type="button"
+  onClick={() => setPaymentMethod('efectivo')}
+  className={`cursor-pointer p-3.5 border rounded-2xl flex flex-col items-center gap-1.5 transition-all ${
+    paymentMethod === 'efectivo'
+      ? 'border-rose-400 bg-rose-50/50 text-rose-500 font-bold shadow-xs'
+      : 'border-rose-50 bg-white text-slate-500 hover:border-rose-200'
+  }`}
+>
+  <span className="text-sm font-black tracking-tight text-emerald-500">$</span>
+  <span className="text-[10px] font-bold">Efectivo</span>
+</button>
                         <button
                           type="button"
                           onClick={() => setPaymentMethod('transfer')}
