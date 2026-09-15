@@ -86,7 +86,7 @@ const [cashAmount, setCashAmount] = useState('');
 
       const metodoPagoTexto =
         paymentMethod === 'card' ? cardBrand :
-        paymentMethod === 'mercadopago' ? 'Mercado Pago' :
+        paymentMethod === 'efectivo' ? 'Efectivo' :
         'Transferencia Bancaria';
 
       const response = await fetch('https://panalera-backend-production.up.railway.app/api/pedidos', {
