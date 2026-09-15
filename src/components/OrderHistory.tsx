@@ -19,8 +19,8 @@ export default function OrderHistory({
 }: OrderHistoryProps) {
   const [searchTerm, setSearchTerm] = useState(activeOrderSearchId || '');
   const [selectedOrderId, setSelectedOrderId] = useState<string | null>(
-    orders.length > 0 ? (activeOrderSearchId || orders[0].id) : null
-  );
+  activeOrderSearchId || null
+);
 
   // Sync state if searched from the external trigger
   React.useEffect(() => {
