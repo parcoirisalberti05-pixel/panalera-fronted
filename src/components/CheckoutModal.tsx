@@ -407,14 +407,38 @@ const [cashAmount, setCashAmount] = useState('');
                         </div>
                       )}
 
-                      {/* Mercado Pago Mock info */}
-                      {paymentMethod === 'mercadopago' && (
-                        <div className="p-4 bg-sky-50/50 border border-sky-100 rounded-2xl text-xs space-y-2 text-slate-650 font-medium">
-                          <p className="font-bold text-sky-700">Integración Oficial de Mercado Pago</p>
-                          <p>Al hacer clic en pagar, se abrirá la pasarela segura integrada para abonar con saldo, tarjeta o dinero en cuenta.</p>
-                        </div>
-                      )}
-
+                     {/* Cash Payment info */}
+{paymentMethod === 'efectivo' && (
+  <div className="p-4 bg-emerald-50/50 border border-emerald-100 rounded-2xl text-xs space-y-3 text-slate-650 font-medium">
+    <p className="font-bold text-emerald-700">Pago en Efectivo</p>
+    <p>Indicá con qué billete vas a abonar para preparar el vuelto exacto.</p>
+    <div>
+      <label className="block text-[10px] font-bold text-slate-400 mb-0.5">¿Con cuánto pagás?</label>
+      <input
+        type="text"
+        inputMode="numeric"
+        required={paymentMethod === 'efectivo'}
+        placeholder="$ 20.000"
+        value={cashAmount ? `$ ${cashAmount}` : ''}
+        onChange={(e) => {
+          const raw = e.target.value.replace(/\D/g, '');
+          setCashAmount(raw === '' ? '' : Number(raw).toLocaleString('es-AR'));
+        }}
+        className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-emerald-100 rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400 transition shadow-xs"
+      />
+    </div>
+    {cashAmount && Number(cashAmount.replace(/\./g, '')) >= total && (
+      <p className="font-bold text-emerald-700">
+        Vuelto: {formatPrice(Number(cashAmount.replace(/\./g, '')) - total)}
+      </p>
+    )}
+    {cashAmount && Number(cashAmount.replace(/\./g, '')) < total && (
+      <p className="font-bold text-rose-500">
+        El monto indicado es menor al total del pedido.
+      </p>
+    )}
+  </div>
+)}
                       {/* Bank Transfer info */}
 {paymentMethod === 'transfer' && (
   <div className="p-4 bg-rose-50/30 border border-rose-100 rounded-2xl text-xs space-y-2 text-slate-650 font-medium">
