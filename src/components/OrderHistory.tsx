@@ -102,11 +102,12 @@ export default function OrderHistory({
             onChange={(e) => {
               setSearchTerm(e.target.value);
               // Auto-select first matching order
-              const matching = orders.find(o =>
-                o.id.toLowerCase().includes(e.target.value.toLowerCase()) ||
-                o.trackingNumber.toLowerCase().includes(e.target.value.toLowerCase())
-              );
-              if (matching) setSelectedOrderId(matching.id);
+              const val = e.target.value.toLowerCase().trim();
+const matching = orders.find(o =>
+  o.id.toLowerCase() === val || o.trackingNumber.toLowerCase() === val
+);
+if (matching) setSelectedOrderId(matching.id);
+else setSelectedOrderId(null);
             }}
             className="w-full h-11 pl-10 pr-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition text-slate-700 shadow-xs placeholder-slate-400"
             id="tracking-search-input"
