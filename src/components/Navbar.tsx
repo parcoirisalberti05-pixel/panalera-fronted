@@ -212,8 +212,7 @@ export default function Navbar({
                     className="h-10 w-auto object-contain"
                     referrerPolicy="no-referrer"
                   />
-                  <span className="text-lg font-black text-slate-800 tracking-tight">Pañalera Arcoiris<span className="text-rose-400">.</span></span>
-                </div>
+                      </div>
                 <button
                   onClick={() => setIsSidebarOpen(false)}
                   className="cursor-pointer p-1.5 hover:bg-rose-50 text-slate-400 hover:text-rose-400 rounded-full transition"
