@@ -317,7 +317,7 @@ export default function App() {
             <p className="text-slate-400 leading-relaxed text-xs">
               Hipolito Irigoyen 520, Manuel Alberti, Buenos Aires, Argentina.<br />
               <strong>Email:</strong> p.arcoiris.alberti05@gmail.com<br />
-              <strong>Teléfono:</strong> 1160438977
+              <strong>Teléfono:</strong> 1126127223
             </p>
           </div>
         </div>
