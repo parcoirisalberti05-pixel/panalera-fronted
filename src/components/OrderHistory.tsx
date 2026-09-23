@@ -223,17 +223,7 @@ else setSelectedOrderId(null);
                     </p>
                   </div>
 
-                  {/* Shipment Status Simulator Tool */}
-                  {selectedOrder.status !== 'entregado' && (
-                    <button
-                      onClick={() => advanceStatus(selectedOrder)}
-                      className="cursor-pointer self-start sm:self-auto px-5 py-2.5 bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-550 hover:to-teal-600 text-white font-bold text-xs rounded-full transition-all flex items-center gap-1.5 shadow-md shadow-emerald-100 hover:scale-105 active:scale-95"
-                      id={`simulate-step-btn-${selectedOrder.id}`}
-                    >
-                      <Play className="w-3.5 h-3.5 fill-current" />
-                      <span>Simular Avance de Envío</span>
-                    </button>
-                  )}
+                
                 </div>
 
                 {/* 4-Step Interactive Tracking Stepper Timeline */}
