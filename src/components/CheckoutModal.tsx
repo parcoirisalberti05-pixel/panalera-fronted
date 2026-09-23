@@ -592,7 +592,7 @@ const calcularEnvio = async () => {
                       id="pay-submit-btn"
                     >
                       <Lock className="w-4 h-4" />
-                      <span>Confirmar y Pagar {formatPrice(total)}</span>
+                      <span>Confirmar y Pagar {formatPrice(finalTotal)}</span>
                     </button>
                   </div>
                 </form>
