@@ -64,7 +64,37 @@ const [cashAmount, setCashAmount] = useState('');
       minimumFractionDigits: 0
     }).format(price);
   };
-
+const calcularEnvio = async () => {
+    if (!shipping.address || !shipping.city) {
+      alert('Completá la dirección y la ciudad antes de calcular el envío.');
+      return;
+    }
+    setCalculatingShipping(true);
+    setShippingMessage(null);
+    try {
+      const direccionCompleta = `${shipping.address}, ${shipping.city}, Argentina`;
+      const response = await fetch('https://panalera-backend-production.up.railway.app/api/calcular-envio', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ direccion: direccionCompleta, montoCompra: total })
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || 'No se pudo calcular el envío');
+      }
+      setShippingCost(data.costo_envio);
+      setShippingMessage(data.mensaje);
+      setShippingCalculated(true);
+    } catch (error) {
+      console.error(error);
+      setShippingMessage('No se pudo calcular el envío. Verificá la dirección.');
+      setShippingCost(null);
+      setShippingCalculated(false);
+    } finally {
+      setCalculatingShipping(false);
+    }
+  };
+  
   const validateForm = () => {
     if (!shipping.name || !shipping.address || !shipping.city || !shipping.phone || !shipping.zipCode || !email) {
       alert('Por favor complete todos los datos de envío y contacto.');
