@@ -98,6 +98,7 @@ const calcularEnvio = async () => {
   };
   
   const validateForm = () => {
+  if (deliveryMethod === 'domicilio') {
     if (!shipping.name || !shipping.address || !shipping.city || !shipping.phone || !shipping.zipCode || !email) {
       alert('Por favor complete todos los datos de envío y contacto.');
       return false;
@@ -110,14 +111,20 @@ const calcularEnvio = async () => {
       alert('Para tu zona el envío se cotiza por WhatsApp. Contactanos antes de confirmar la compra.');
       return false;
     }
-    if (paymentMethod === 'card') {
-      if (!cardNumber || !cardName || !expiry || !cvc) {
-        alert('Por favor complete todos los datos de su tarjeta.');
-        return false;
-      }
+  } else {
+    if (!shipping.name || !shipping.phone || !email) {
+      alert('Por favor complete tu nombre, teléfono y email para retirar en el local.');
+      return false;
     }
-    return true;
-  };
+  }
+  if (paymentMethod === 'card') {
+    if (!cardNumber || !cardName || !expiry || !cvc) {
+      alert('Por favor complete todos los datos de su tarjeta.');
+      return false;
+    }
+  }
+  return true;
+};
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
