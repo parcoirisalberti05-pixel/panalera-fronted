@@ -34,6 +34,12 @@ const [cashAmount, setCashAmount] = useState('');
   const [expiry, setExpiry] = useState('');
   const [cvc, setCvc] = useState('');
 
+  // Shipping calculation state
+  const [shippingCost, setShippingCost] = useState<number | null>(null);
+  const [shippingMessage, setShippingMessage] = useState<string | null>(null);
+  const [calculatingShipping, setCalculatingShipping] = useState(false);
+  const [shippingCalculated, setShippingCalculated] = useState(false);
+
   // Checkout Stages
   // 'form' -> 'processing' -> 'success'
   const [stage, setStage] = useState<'form' | 'processing' | 'success'>('form');
