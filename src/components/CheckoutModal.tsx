@@ -553,13 +553,24 @@ const calcularEnvio = async () => {
                           <span>{formatPrice(total)}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>Envío a Domicilio</span>
-                          <span className="text-teal-600 font-bold">Gratis</span>
-                        </div>
-                        <div className="flex justify-between font-bold text-slate-800 text-sm pt-2 border-t border-rose-100">
-                          <span>Total</span>
-                          <span className="text-rose-500 text-base font-black">{formatPrice(total)}</span>
-                        </div>
+            <span>Envío a Domicilio</span>
+            {!shippingCalculated && (
+              <span className="text-slate-400 font-bold">A calcular</span>
+            )}
+            {shippingCalculated && shippingCost === 0 && (
+              <span className="text-teal-600 font-bold">Gratis</span>
+            )}
+            {shippingCalculated && shippingCost !== null && shippingCost > 0 && (
+              <span className="text-slate-700 font-bold">{formatPrice(shippingCost)}</span>
+            )}
+            {shippingCalculated && shippingCost === null && (
+              <span className="text-rose-500 font-bold text-xs">A cotizar</span>
+            )}
+          </div>
+          <div className="flex justify-between font-bold text-slate-800 text-sm pt-2 border-t border-rose-100">
+            <span>Total</span>
+            <span className="text-rose-500 text-base font-black">{formatPrice(finalTotal)}</span>
+          </div>
                       </div>
                     </div>
 
