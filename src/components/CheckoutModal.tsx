@@ -39,7 +39,8 @@ const [cashAmount, setCashAmount] = useState('');
   const [shippingMessage, setShippingMessage] = useState<string | null>(null);
   const [calculatingShipping, setCalculatingShipping] = useState(false);
   const [shippingCalculated, setShippingCalculated] = useState(false);
-
+  const [deliveryMethod, setDeliveryMethod] = useState<'domicilio' | 'retiro'>('domicilio');
+  
   // Checkout Stages
   // 'form' -> 'processing' -> 'success'
   const [stage, setStage] = useState<'form' | 'processing' | 'success'>('form');
@@ -277,84 +278,129 @@ const calcularEnvio = async () => {
                       </div>
                     </div>
 
-                    {/* Shipping Address */}
-                    <div>
-                      <h3 className="text-sm font-black text-slate-800 uppercase tracking-wider mb-3">2. Dirección de Entrega</h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div className="sm:col-span-2">
-                          <label className="block text-xs font-bold text-slate-500 mb-1">Nombre Completo del Destinatario</label>
-                          <input
-                            type="text"
-                            required
-                            placeholder="Juan Pérez"
-                            value={shipping.name}
-                            onChange={(e) => setShipping({ ...shipping, name: e.target.value })}
-                            className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition-all text-slate-700 shadow-xs"
-                          />
-                        </div>
-                        <div className="sm:col-span-2">
-                          <label className="block text-xs font-bold text-slate-500 mb-1">Dirección de Envío</label>
-                          <input
-                            type="text"
-                            required
-                            placeholder="Av. Rivadavia 1234, Piso 2 Depto B"
-                            value={shipping.address}
-                            onChange={(e) => setShipping({ ...shipping, address: e.target.value })}
-                            className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition-all text-slate-700 shadow-xs"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-xs font-bold text-slate-500 mb-1">Ciudad / Localidad</label>
-                          <input
-                            type="text"
-                            required
-                            placeholder="Ciudad Autónoma de Buenos Aires"
-                            value={shipping.city}
-                            onChange={(e) => setShipping({ ...shipping, city: e.target.value })}
-                            className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition-all text-slate-700 shadow-xs"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-xs font-bold text-slate-500 mb-1">Código Postal</label>
-                          <input
-                            type="text"
-                            required
-                            placeholder="C1033AA"
-                            value={shipping.zipCode}
-                            onChange={(e) => setShipping({ ...shipping, zipCode: e.target.value })}
-                            className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition-all text-slate-700 shadow-xs"
-                          />
-                        </div>
-                        <div className="sm:col-span-2">
-                          <label className="block text-xs font-bold text-slate-500 mb-1">Teléfono de Contacto</label>
-                          <input
-                            type="tel"
-                            required
-                            placeholder="11 5555 4444"
-                            value={shipping.phone}
-                            onChange={(e) => setShipping({ ...shipping, phone: e.target.value })}
-                            className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition-all text-slate-700 shadow-xs"
-                          />
-                        <div className="sm:col-span-2">
-                          <button
-                            type="button"
-                            onClick={calcularEnvio}
-                            disabled={calculatingShipping}
-                            className="cursor-pointer w-full h-10 border border-rose-300 text-rose-500 font-bold text-xs rounded-full hover:bg-rose-50 transition disabled:opacity-50"
-                          >
-                            {calculatingShipping ? 'Calculando...' : 'Calcular Costo de Envío'}
-                          </button>
-                          {shippingCalculated && (
-                            <p className={`mt-2 text-xs font-bold ${shippingCost === null ? 'text-rose-500' : 'text-emerald-600'}`}>
-                              {shippingCost !== null && shippingCost > 0 && `Costo de envío: ${formatPrice(shippingCost)}`}
-                              {shippingCost === 0 && '¡Envío gratis!'}
-                              {shippingCost === null && shippingMessage}
-                            </p>
-                          )}
-                        </div>
-                        </div>
-                      </div>
-                    </div>
+                   {/* Shipping Address */}
+<div>
+  <h3 className="text-sm font-black text-slate-800 uppercase tracking-wider mb-3">2. Dirección de Entrega</h3>
+
+  <div className="flex gap-2 mb-4">
+    <button
+      type="button"
+      onClick={() => {
+        setDeliveryMethod('domicilio');
+        setShippingCalculated(false);
+        setShippingCost(null);
+        setShippingMessage(null);
+      }}
+      className={`cursor-pointer flex-1 h-10 rounded-full text-xs font-bold transition ${deliveryMethod === 'domicilio' ? 'bg-rose-400 text-white' : 'bg-white border border-rose-200 text-rose-500'}`}
+    >
+      Envío a Domicilio
+    </button>
+    <button
+      type="button"
+      onClick={() => {
+        setDeliveryMethod('retiro');
+        setShippingCost(0);
+        setShippingMessage(null);
+        setShippingCalculated(true);
+      }}
+      className={`cursor-pointer flex-1 h-10 rounded-full text-xs font-bold transition ${deliveryMethod === 'retiro' ? 'bg-rose-400 text-white' : 'bg-white border border-rose-200 text-rose-500'}`}
+    >
+      Retiro en el Local
+    </button>
+  </div>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    <div className="sm:col-span-2">
+      <label className="block text-xs font-bold text-slate-500 mb-1">Nombre Completo del Destinatario</label>
+      <input
+        type="text"
+        required
+        placeholder="Juan Pérez"
+        value={shipping.name}
+        onChange={(e) => setShipping({ ...shipping, name: e.target.value })}
+        className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition-all text-slate-700 shadow-xs"
+      />
+    </div>
+
+    {deliveryMethod === 'domicilio' && (
+      <>
+        <div className="sm:col-span-2">
+          <label className="block text-xs font-bold text-slate-500 mb-1">Dirección de Envío</label>
+          <input
+            type="text"
+            required
+            placeholder="Av. Rivadavia 1234, Piso 2 Depto B"
+            value={shipping.address}
+            onChange={(e) => setShipping({ ...shipping, address: e.target.value })}
+            className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition-all text-slate-700 shadow-xs"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-slate-500 mb-1">Ciudad / Localidad</label>
+          <input
+            type="text"
+            required
+            placeholder="Ciudad Autónoma de Buenos Aires"
+            value={shipping.city}
+            onChange={(e) => setShipping({ ...shipping, city: e.target.value })}
+            className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition-all text-slate-700 shadow-xs"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-bold text-slate-500 mb-1">Código Postal</label>
+          <input
+            type="text"
+            required
+            placeholder="C1033AA"
+            value={shipping.zipCode}
+            onChange={(e) => setShipping({ ...shipping, zipCode: e.target.value })}
+            className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition-all text-slate-700 shadow-xs"
+          />
+        </div>
+      </>
+    )}
+
+    <div className="sm:col-span-2">
+      <label className="block text-xs font-bold text-slate-500 mb-1">Teléfono de Contacto</label>
+      <input
+        type="tel"
+        required
+        placeholder="11 5555 4444"
+        value={shipping.phone}
+        onChange={(e) => setShipping({ ...shipping, phone: e.target.value })}
+        className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition-all text-slate-700 shadow-xs"
+      />
+    </div>
+
+    {deliveryMethod === 'domicilio' && (
+      <div className="sm:col-span-2">
+        <button
+          type="button"
+          onClick={calcularEnvio}
+          disabled={calculatingShipping}
+          className="cursor-pointer w-full h-10 border border-rose-300 text-rose-500 font-bold text-xs rounded-full hover:bg-rose-50 transition disabled:opacity-50"
+        >
+          {calculatingShipping ? 'Calculando...' : 'Calcular Costo de Envío'}
+        </button>
+        {shippingCalculated && (
+          <p className={`mt-2 text-xs font-bold ${shippingCost === null ? 'text-rose-500' : 'text-emerald-600'}`}>
+            {shippingCost !== null && shippingCost > 0 && `Costo de envío: ${formatPrice(shippingCost)}`}
+            {shippingCost === 0 && '¡Envío gratis!'}
+            {shippingCost === null && shippingMessage}
+          </p>
+        )}
+      </div>
+    )}
+
+    {deliveryMethod === 'retiro' && (
+      <div className="sm:col-span-2">
+        <p className="text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full px-4 py-2 text-center">
+          Retirás tu pedido en el local, sin costo de envío.
+        </p>
+      </div>
+    )}
+  </div>
+</div>
 
                     {/* Payment Gateways Selection */}
                     <div>
