@@ -149,7 +149,7 @@ const calcularEnvio = async () => {
             precio: item.product.price,
             cantidad: item.quantity
           })),
-          total: total,
+          total: finalTotal,
           metodo_pago: metodoPagoTexto
         })
       });
