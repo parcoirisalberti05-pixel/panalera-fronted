@@ -191,7 +191,7 @@ const calcularEnvio = async () => {
         id: 'PP-' + pedidoCreado.id,
         date: new Date().toLocaleDateString('es-AR'),
         items: [...cartItems],
-        total: total,
+        total: finalTotal,
         status: 'pendiente',
         shippingAddress: shipping,
         paymentMethod: {
