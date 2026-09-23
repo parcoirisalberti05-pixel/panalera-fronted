@@ -47,7 +47,8 @@ const [cashAmount, setCashAmount] = useState('');
 
   // Computed values
   const total = cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
-
+const finalTotal = total + (shippingCost || 0);
+  
   // Simple card brand detector
   const getCardBrand = (num: string) => {
     const cleanNum = num.replace(/\D/g, '');
