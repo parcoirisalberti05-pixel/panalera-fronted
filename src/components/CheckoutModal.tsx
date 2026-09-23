@@ -335,6 +335,23 @@ const calcularEnvio = async () => {
                             onChange={(e) => setShipping({ ...shipping, phone: e.target.value })}
                             className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition-all text-slate-700 shadow-xs"
                           />
+                        <div className="sm:col-span-2">
+                          <button
+                            type="button"
+                            onClick={calcularEnvio}
+                            disabled={calculatingShipping}
+                            className="cursor-pointer w-full h-10 border border-rose-300 text-rose-500 font-bold text-xs rounded-full hover:bg-rose-50 transition disabled:opacity-50"
+                          >
+                            {calculatingShipping ? 'Calculando...' : 'Calcular Costo de Envío'}
+                          </button>
+                          {shippingCalculated && (
+                            <p className={`mt-2 text-xs font-bold ${shippingCost === null ? 'text-rose-500' : 'text-emerald-600'}`}>
+                              {shippingCost !== null && shippingCost > 0 && `Costo de envío: ${formatPrice(shippingCost)}`}
+                              {shippingCost === 0 && '¡Envío gratis!'}
+                              {shippingCost === null && shippingMessage}
+                            </p>
+                          )}
+                        </div>
                         </div>
                       </div>
                     </div>
