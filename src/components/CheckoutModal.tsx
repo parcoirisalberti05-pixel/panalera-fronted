@@ -101,6 +101,14 @@ const calcularEnvio = async () => {
       alert('Por favor complete todos los datos de envío y contacto.');
       return false;
     }
+    if (!shippingCalculated) {
+      alert('Por favor calculá el costo de envío antes de continuar.');
+      return false;
+    }
+    if (shippingCost === null) {
+      alert('Para tu zona el envío se cotiza por WhatsApp. Contactanos antes de confirmar la compra.');
+      return false;
+    }
     if (paymentMethod === 'card') {
       if (!cardNumber || !cardName || !expiry || !cvc) {
         alert('Por favor complete todos los datos de su tarjeta.');
@@ -109,7 +117,6 @@ const calcularEnvio = async () => {
     }
     return true;
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
