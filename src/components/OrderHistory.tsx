@@ -37,7 +37,19 @@ export default function OrderHistory({
   return (o.trackingNumber || '').toLowerCase() === term;
 });
   const selectedOrder = orders.find(o => o.id === selectedOrderId);
-
+// Al seleccionar un pedido, le pregunta al backend cuál es su estado real y actualizado
+  React.useEffect(() => {
+    if (!selectedOrder?.trackingNumber) return;
+    fetch(`https://panalera-backend-production.up.railway.app/api/pedidos/tracking/${selectedOrder.trackingNumber}`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data && data.estado && data.estado !== selectedOrder.status) {
+          onUpdateOrderStatus(selectedOrder.id, data.estado);
+        }
+      })
+      .catch(() => {});
+  }, [selectedOrder?.trackingNumber]);
+  
   // Format currency
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('es-AR', {
