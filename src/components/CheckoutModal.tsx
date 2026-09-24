@@ -148,9 +148,9 @@ const calcularEnvio = async () => {
           cliente_nombre: shipping.name,
           cliente_telefono: shipping.phone,
           cliente_email: email,
-          direccion: shipping.address,
-          localidad: shipping.city,
-          codigo_postal: shipping.zipCode,
+          direccion: deliveryMethod === 'retiro' ? 'Retiro en el local' : shipping.address,
+          localidad: deliveryMethod === 'retiro' ? 'Retiro en el local' : shipping.city,
+          codigo_postal: deliveryMethod === 'retiro' ? '' : shipping.zipCode,
           items: cartItems.map(item => ({
             id: item.product.id,
             nombre: item.product.name,
