@@ -330,7 +330,31 @@ export default function App() {
           </p>
         </div>
       </footer>
-
+      
+{/* Return Policy Modal */}
+      {isReturnPolicyOpen && (
+        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4" onClick={() => setIsReturnPolicyOpen(false)}>
+          <div className="bg-white rounded-2xl max-w-lg w-full p-6 md:p-8 relative max-h-[85vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => setIsReturnPolicyOpen(false)} className="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-xl font-bold">✕</button>
+            <h3 className="text-xl font-bold text-slate-800 mb-4">Cambios y devoluciones</h3>
+            <div className="space-y-4 text-sm text-slate-600">
+              <p>En Pañalera Arcoiris resolvemos cada cambio o devolución con atención personalizada, evaluando cada caso en particular.</p>
+              <div>
+                <h4 className="font-bold text-slate-800 mb-1">Revisión del pedido</h4>
+                <p>Escribinos por WhatsApp con tu número de pedido, una descripción del problema y fotos del producto si corresponde.</p>
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-800 mb-1">Estado del producto</h4>
+                <p>El producto debe estar sin uso, con su embalaje original y en condiciones adecuadas para poder evaluar el cambio.</p>
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-800 mb-1">Resolución</h4>
+                <p>Te confirmamos los pasos a seguir, si hay algún costo asociado y las alternativas disponibles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       {/* Floating Instagram Button */}
       <a
         href="https://www.instagram.com/p.arcoiris.alberti"
