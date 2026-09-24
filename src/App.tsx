@@ -84,7 +84,8 @@ export default function App() {
   // UI Open/Close States
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
-
+  const [isReturnPolicyOpen, setIsReturnPolicyOpen] = useState(false);
+  
   // 2. Cache Synchronization
   useEffect(() => {
     localStorage.setItem('peque_cart', JSON.stringify(cart));
