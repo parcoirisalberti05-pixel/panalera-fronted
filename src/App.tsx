@@ -308,7 +308,7 @@ export default function App() {
             <ul className="space-y-2 text-slate-400">
               <li className="flex items-center gap-1.5 cursor-pointer hover:text-white transition-colors"><HelpCircle className="w-4 h-4 text-rose-450" /> Centro de ayuda</li>
               <li className="cursor-pointer hover:text-white transition-colors">Preguntas frecuentes (FAQ)</li>
-              <li className="cursor-pointer hover:text-white transition-colors">Políticas de devolución</li>
+             <li><button onClick={() => setIsReturnPolicyOpen(true)} className="cursor-pointer hover:text-white transition-colors">Políticas de devolución</button></li>
               <li className="cursor-pointer hover:text-white transition-colors">Términos y condiciones</li>
             </ul>
           </div>
