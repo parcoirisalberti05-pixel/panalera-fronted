@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Package, MapPin, Truck, CheckCircle2, Clock, Play, ArrowLeft, Calendar, CreditCard, ChevronRight } from 'lucide-react';
-import { Order, TrackingStep } from '../types';
-
+import { Order, TrackingStep, CartItem } from '../types';
 interface OrderHistoryProps {
   orders: Order[];
   activeOrderSearchId: string | null;
