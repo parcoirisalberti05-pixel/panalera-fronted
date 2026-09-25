@@ -30,25 +30,102 @@ export default function OrderHistory({
     }
   }, [activeOrderSearchId]);
 
-  // Filter orders by search term (id or tracking number)
+ // Filter orders by search term (id or tracking number)
   const filteredOrders = orders.filter(o => {
+    const term = searchTerm.toLowerCase().trim();
+    if (term.length < 5) return false;
+    return (o.trackingNumber || '').toLowerCase() === term;
+  });
+
+  const [remoteOrder, setRemoteOrder] = useState<Order | null>(null);
+  const localOrder = orders.find(o => o.id === selectedOrderId);
   const term = searchTerm.toLowerCase().trim();
-  if (term.length < 5) return false;
-  return (o.trackingNumber || '').toLowerCase() === term;
-});
-  const selectedOrder = orders.find(o => o.id === selectedOrderId);
-// Al seleccionar un pedido, le pregunta al backend cuál es su estado real y actualizado
+  const selectedOrder = localOrder || (remoteOrder && remoteOrder.trackingNumber.toLowerCase() === term ? remoteOrder : undefined);
+
+  // Si el pedido ya está guardado en este navegador, le pregunta al backend si el estado sigue igual
   React.useEffect(() => {
-    if (!selectedOrder?.trackingNumber) return;
-    fetch(`https://panalera-backend-production.up.railway.app/api/pedidos/tracking/${selectedOrder.trackingNumber}`)
+    if (!localOrder?.trackingNumber) return;
+    fetch(`https://panalera-backend-production.up.railway.app/api/pedidos/tracking/${localOrder.trackingNumber}`)
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
-        if (data && data.estado && data.estado !== selectedOrder.status) {
-          onUpdateOrderStatus(selectedOrder.id, data.estado);
+        if (data && data.estado && data.estado !== localOrder.status) {
+          onUpdateOrderStatus(localOrder.id, data.estado);
         }
       })
       .catch(() => {});
-  }, [selectedOrder?.trackingNumber]);
+  }, [localOrder?.trackingNumber]);
+
+  // Si el pedido NO está en este navegador, lo busca directo en la base de datos real
+  React.useEffect(() => {
+    const code = searchTerm.trim();
+    if (localOrder || code.length < 6) {
+      setRemoteOrder(null);
+      return;
+    }
+    fetch(`https://panalera-backend-production.up.railway.app/api/pedidos/tracking/${code}`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!data) {
+          setRemoteOrder(null);
+          return;
+        }
+        let items: CartItem[] = [];
+        try {
+          const rawItems = typeof data.items === 'string' ? JSON.parse(data.items) : data.items;
+          items = (rawItems || []).map((it: any) => ({
+            product: {
+              id: it.product?.id || it.id || '',
+              name: it.product?.name || it.nombre || it.name || 'Producto',
+              description: '',
+              price: it.product?.price ?? it.precio ?? it.price ?? 0,
+              category: 'accesorios',
+              image: it.product?.image || it.imagen || it.image || '',
+              rating: 0,
+              reviews: 0,
+              stock: 0,
+              featured: false,
+            },
+            quantity: it.quantity || it.cantidad || 1,
+          }));
+        } catch (e) {}
+
+        const statusIndex = ['pendiente', 'preparando', 'en_camino', 'entregado'].indexOf(data.estado);
+        const stepsInfo = [
+          { status: 'Aprobado', description: '¡Pago aprobado! Tu pedido está en lista de empaque.' },
+          { status: 'Preparando', description: 'Estamos preparando tu paquete con mucho amor.' },
+          { status: 'En camino', description: 'Tu pedido está en camino.' },
+          { status: 'Entregado', description: '¡Entregado! Tu pedido ya está en tus manos.' },
+        ];
+        const trackingHistory: TrackingStep[] = stepsInfo.map((s, idx) => ({
+          date: idx <= statusIndex ? new Date(data.fecha).toLocaleDateString('es-AR') : 'Pendiente',
+          status: s.status,
+          description: s.description,
+          completed: idx <= statusIndex,
+        }));
+
+        setRemoteOrder({
+          id: `P-${data.id}`,
+          date: new Date(data.fecha).toLocaleDateString('es-AR'),
+          items,
+          total: Number(data.total),
+          status: data.estado,
+          shippingAddress: {
+            name: data.cliente_nombre || '',
+            address: data.direccion || '',
+            city: data.localidad || '',
+            phone: data.cliente_telefono || '',
+            zipCode: data.codigo_postal || '',
+          },
+          paymentMethod: {
+            cardBrand: data.metodo_pago || '',
+            last4: 'MP-Wallet',
+          },
+          trackingNumber: data.numero_seguimiento,
+          trackingHistory,
+        });
+      })
+      .catch(() => setRemoteOrder(null));
+  }, [searchTerm, localOrder]);
   
   // Format currency
   const formatPrice = (price: number) => {
