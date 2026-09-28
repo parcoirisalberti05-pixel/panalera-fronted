@@ -66,41 +66,60 @@ const finalTotal = total + (shippingCost || 0);
       minimumFractionDigits: 0
     }).format(price);
   };
-const calcularEnvio = async () => {
-    if (!shipping.address || !shipping.city) {
-      alert('Completá la dirección y la ciudad antes de calcular el envío.');
-      return;
-    }
+useEffect(() => {
+  if (deliveryMethod !== 'domicilio') return;
+
+  // Cualquier cambio invalida el cálculo anterior
+  setShippingCalculated(false);
+  setShippingCost(null);
+  setShippingMessage(null);
+
+  if (shipping.address.trim().length < 5 || shipping.city.trim().length < 3) return;
+
+  let cancelled = false;
+  const timer = setTimeout(async () => {
     setCalculatingShipping(true);
-    setShippingMessage(null);
     try {
-      const direccionCompleta = `${shipping.address}, ${shipping.city}, Argentina`;
       const response = await fetch('https://panalera-backend-production.up.railway.app/api/calcular-envio', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ direccion: direccionCompleta, montoCompra: total })
+        body: JSON.stringify({
+          direccion: `${shipping.address}, ${shipping.city}, Argentina`,
+          montoCompra: total
+        })
       });
       const data = await response.json();
-      if (!response.ok) {
-        throw new Error(data.error || 'No se pudo calcular el envío');
-      }
+      if (cancelled) return;
+      if (!response.ok) throw new Error(data.error || 'No se pudo calcular el envío');
       setShippingCost(data.costo_envio);
       setShippingMessage(data.mensaje);
       setShippingCalculated(true);
     } catch (error) {
+      if (cancelled) return;
       console.error(error);
       setShippingMessage('No se pudo calcular el envío. Verificá la dirección.');
       setShippingCost(null);
       setShippingCalculated(false);
     } finally {
-      setCalculatingShipping(false);
+      if (!cancelled) setCalculatingShipping(false);
     }
+  }, 900);
+
+  return () => {
+    cancelled = true;
+    clearTimeout(timer);
+    setCalculatingShipping(false);
   };
+}, [deliveryMethod, shipping.address, shipping.city, total]);
   
   const validateForm = () => {
   if (deliveryMethod === 'domicilio') {
     if (!shipping.name || !shipping.address || !shipping.city || !shipping.phone || !shipping.zipCode || !email) {
       alert('Por favor complete todos los datos de envío y contacto.');
+      return false;
+    }
+    if (calculatingShipping) {
+      alert('Estamos calculando el envío, esperá un segundo y volvé a confirmar.');
       return false;
     }
     if (!shippingCalculated) {
@@ -380,25 +399,25 @@ const calcularEnvio = async () => {
     </div>
 
     {deliveryMethod === 'domicilio' && (
-      <div className="sm:col-span-2">
-        <button
-          type="button"
-          onClick={calcularEnvio}
-          disabled={calculatingShipping}
-          className="cursor-pointer w-full h-10 border border-rose-300 text-rose-500 font-bold text-xs rounded-full hover:bg-rose-50 transition disabled:opacity-50"
-        >
-          {calculatingShipping ? 'Calculando...' : 'Calcular Costo de Envío'}
-        </button>
-        {shippingCalculated && (
-          <p className={`mt-2 text-xs font-bold ${shippingCost === null ? 'text-rose-500' : 'text-emerald-600'}`}>
-            {shippingCost !== null && shippingCost > 0 && `Costo de envío: ${formatPrice(shippingCost)}`}
-            {shippingCost === 0 && '¡Envío gratis!'}
-            {shippingCost === null && shippingMessage}
-          </p>
-        )}
-      </div>
+  <div className="sm:col-span-2">
+    {calculatingShipping && (
+      <p className="text-xs font-bold text-slate-400">Calculando costo de envío...</p>
     )}
-
+    {!calculatingShipping && shippingCalculated && (
+      <p className={`text-xs font-bold ${shippingCost === null ? 'text-rose-500' : 'text-emerald-600'}`}>
+        {shippingCost !== null && shippingCost > 0 && `Costo de envío: ${formatPrice(shippingCost)}`}
+        {shippingCost === 0 && '¡Envío gratis!'}
+        {shippingCost === null && shippingMessage}
+      </p>
+    )}
+    {!calculatingShipping && !shippingCalculated && shippingMessage && (
+      <p className="text-xs font-bold text-rose-500">{shippingMessage}</p>
+    )}
+    {!calculatingShipping && !shippingCalculated && !shippingMessage && (
+      <p className="text-xs text-slate-400">El envío se calcula solo al completar dirección y ciudad.</p>
+    )}
+  </div>
+)}
     {deliveryMethod === 'retiro' && (
       <div className="sm:col-span-2">
         <p className="text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full px-4 py-2 text-center">
