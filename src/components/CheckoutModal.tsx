@@ -142,8 +142,15 @@ useEffect(() => {
       return false;
     }
   }
-  return true;
-};
+   if (paymentMethod === 'efectivo') {
+  const montoEfectivo = Number(cashAmount.replace(/\D/g, '')) || 0;
+  if (montoEfectivo < finalTotal) {
+    alert(`El monto ingresado ($${montoEfectivo.toLocaleString('es-AR')}) es menor al total del pedido ($${finalTotal.toLocaleString('es-AR')}). Verificá el importe.`);
+    return false;
+  }
+}
+    return true;
+  };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
