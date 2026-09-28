@@ -567,12 +567,12 @@ useEffect(() => {
         className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-emerald-100 rounded-full focus:outline-none focus:ring-2 focus:ring-emerald-200 focus:border-emerald-400 transition shadow-xs"
       />
     </div>
-    {cashAmount && Number(cashAmount.replace(/\./g, '')) >= total && (
+    {cashAmount && Number(cashAmount.replace(/\./g, '')) >= finalTotal && (
       <p className="font-bold text-emerald-700">
-        Vuelto: {formatPrice(Number(cashAmount.replace(/\./g, '')) - total)}
+        Vuelto: {formatPrice(Number(cashAmount.replace(/\./g, '')) - finalTotal)}
       </p>
     )}
-    {cashAmount && Number(cashAmount.replace(/\./g, '')) < total && (
+    {cashAmount && Number(cashAmount.replace(/\./g, '')) < finalTotal && (
       <p className="font-bold text-rose-500">
         El monto indicado es menor al total del pedido.
       </p>
