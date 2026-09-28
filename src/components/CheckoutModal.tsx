@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Lock, CreditCard, CheckCircle2, ShieldAlert, ShoppingBag, Truck, Package } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CartItem, ShippingAddress, PaymentInfo, Order, TrackingStep } from '../types';
