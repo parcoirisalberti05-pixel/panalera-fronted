@@ -37,6 +37,7 @@ const [cashAmount, setCashAmount] = useState('');
   // Shipping calculation state
   const [shippingCost, setShippingCost] = useState<number | null>(null);
   const [shippingMessage, setShippingMessage] = useState<string | null>(null);
+  const [faltaParaGratis, setFaltaParaGratis] = useState<number | null>(null);
   const [calculatingShipping, setCalculatingShipping] = useState(false);
   const [shippingCalculated, setShippingCalculated] = useState(false);
   const [deliveryMethod, setDeliveryMethod] = useState<'domicilio' | 'retiro'>('domicilio');
@@ -94,12 +95,14 @@ useEffect(() => {
       setShippingCost(data.costo_envio);
       setShippingMessage(data.mensaje);
       setShippingCalculated(true);
+      setFaltaParaGratis(data.falta_para_gratis || null);
     } catch (error) {
       if (cancelled) return;
       console.error(error);
       setShippingMessage('No se pudo calcular el envío. Verificá la dirección.');
       setShippingCost(null);
       setShippingCalculated(false);
+      setFaltaParaGratis(null);
     } finally {
       if (!cancelled) setCalculatingShipping(false);
     }
@@ -417,6 +420,11 @@ useEffect(() => {
         {shippingCost === null && shippingMessage}
       </p>
     )}
+    {!calculatingShipping && shippingCalculated && faltaParaGratis !== null && faltaParaGratis > 0 && (
+  <p className="text-xs font-bold text-amber-600 mt-1">
+    Sumá {formatPrice(faltaParaGratis)} más y el envío es gratis
+  </p>
+)}
     {!calculatingShipping && !shippingCalculated && shippingMessage && (
       <p className="text-xs font-bold text-rose-500">{shippingMessage}</p>
     )}
