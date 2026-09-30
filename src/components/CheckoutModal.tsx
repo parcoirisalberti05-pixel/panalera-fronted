@@ -415,7 +415,6 @@ useEffect(() => {
     )}
     {!calculatingShipping && shippingCalculated && (
       <p className={`text-xs font-bold ${shippingCost === null ? 'text-rose-500' : 'text-emerald-600'}`}>
-        {shippingCost !== null && shippingCost > 0 && `Costo de envío: ${formatPrice(shippingCost)}`}
         {shippingCost === 0 && '¡Envío gratis!'}
         {shippingCost === null && shippingMessage}
       </p>
