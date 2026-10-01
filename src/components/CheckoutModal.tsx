@@ -329,7 +329,7 @@ useEffect(() => {
       }}
       className={`cursor-pointer flex-1 h-10 rounded-full text-xs font-bold transition ${deliveryMethod === 'domicilio' ? 'bg-rose-400 text-white' : 'bg-white border border-rose-200 text-rose-500'}`}
     >
-      Envío a Domicilio
+      🚚 Envío a Domicilio 🚚
     </button>
     <button
       type="button"
@@ -341,7 +341,7 @@ useEffect(() => {
       }}
       className={`cursor-pointer flex-1 h-10 rounded-full text-xs font-bold transition ${deliveryMethod === 'retiro' ? 'bg-rose-400 text-white' : 'bg-white border border-rose-200 text-rose-500'}`}
     >
-      Retiro en el Local
+      🏪 Retiro en el Local 🏪
     </button>
   </div>
 
