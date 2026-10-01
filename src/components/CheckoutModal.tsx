@@ -659,11 +659,11 @@ useEffect(() => {
                       </div>
                     </div>
               {deliveryMethod === 'domicilio' && shippingCalculated && faltaParaGratis !== null && faltaParaGratis > 0 && (
-  <div className="border border-rose-200 bg-rose-50 rounded-3xl p-5 text-xs">
-    <p className="font-black text-rose-600">
-      Sumá {formatPrice(faltaParaGratis)} y el envío es gratis
-    </p>
-  </div>
+  <div className="border border-emerald-200 bg-emerald-50 rounded-3xl p-5 text-xs">
+  <p className="font-black text-emerald-700 text-sm">
+    🎁 Sumá {formatPrice(faltaParaGratis)} y el envío es gratis 🎁
+  </p>
+</div>
 )}   
                     
                     {/* Security Trust badge */}
