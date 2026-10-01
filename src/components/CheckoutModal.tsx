@@ -419,11 +419,7 @@ useEffect(() => {
         {shippingCost === null && shippingMessage}
       </p>
     )}
-    {!calculatingShipping && shippingCalculated && faltaParaGratis !== null && faltaParaGratis > 0 && (
-  <p className="text-xs font-bold text-amber-600 mt-1">
-    Sumá {formatPrice(faltaParaGratis)} más y el envío es gratis
-  </p>
-)}
+    
     {!calculatingShipping && !shippingCalculated && shippingMessage && (
       <p className="text-xs font-bold text-rose-500">{shippingMessage}</p>
     )}
