@@ -443,13 +443,14 @@ useEffect(() => {
 <p className="text-xs font-bold text-sky-600 mt-1">{getDeliveryMessage()}</p>
   </div>
 )}
-    {deliveryMethod === 'retiro' && (
-      <div className="sm:col-span-2">
-        <p className="text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full px-4 py-2 text-center">
-          Retirás tu pedido en el local, sin costo de envío.
-        </p>
-      </div>
-    )}
+   {deliveryMethod === 'retiro' && (
+  <div className="sm:col-span-2">
+    <p className="text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full px-4 py-2 text-center">
+      Retirás tu pedido en el local, sin costo de envío.
+    </p>
+    <p className="text-xs font-bold text-emerald-700 mt-1">{getRetiroMessage()}</p>
+  </div>
+)}
   </div>
 </div>
 
