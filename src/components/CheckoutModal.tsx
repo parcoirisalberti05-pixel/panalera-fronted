@@ -763,6 +763,12 @@ useEffect(() => {
                       <span className="font-bold text-slate-700">Dirección:</span>
                       <span className="text-slate-900 text-right">{createdOrder.shippingAddress.address}, {createdOrder.shippingAddress.city}</span>
                     </div>
+                    <div className="flex justify-between border-t border-rose-50 pt-2">
+  <span className="font-bold text-slate-700">Entrega:</span>
+  <span className="text-slate-900 text-right">
+    {deliveryMethod === 'retiro' ? getRetiroMessage() : getDeliveryMessage()}
+  </span>
+</div>
                   </div>
 
                   <div className="w-full pt-4 flex flex-col sm:flex-row gap-3">
