@@ -440,7 +440,6 @@ useEffect(() => {
 {!calculatingShipping && !shippingCalculated && !shippingMessage && (
   <p className="text-xs text-slate-400">El envío se calcula solo al completar dirección y ciudad.</p>
 )}
-<p className="text-xs font-bold text-sky-600 mt-1">{getDeliveryMessage()}</p>
   </div>
 )}
    {deliveryMethod === 'retiro' && (
