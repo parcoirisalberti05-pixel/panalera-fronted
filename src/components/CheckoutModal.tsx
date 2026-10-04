@@ -67,6 +67,20 @@ const finalTotal = total + (shippingCost || 0);
       minimumFractionDigits: 0
     }).format(price);
   };
+  const getDeliveryMessage = () => {
+  const now = new Date();
+  const horaActual = now.getHours() + now.getMinutes() / 60;
+  const dia = horaActual < 13 ? 'hoy' : 'mañana';
+  return `Tu pedido se entrega ${dia} de 15 a 21:30hs`;
+};
+
+const getRetiroMessage = () => {
+  const diaSemana = new Date().getDay();
+  if (diaSemana === 0) {
+    return 'Horario de atención: Domingo de 10:00 a 13:15hs';
+  }
+  return 'Horario de atención: Lunes a sábado de 9:15 a 13:15hs y de 17:00 a 20:30hs';
+};
 useEffect(() => {
   if (deliveryMethod !== 'domicilio') return;
 
