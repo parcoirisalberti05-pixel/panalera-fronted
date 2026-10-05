@@ -679,7 +679,8 @@ useEffect(() => {
     🎁 Sumá {formatPrice(faltaParaGratis)} y el envío es gratis 🎁
   </p>
 </div>
-                  <div className="border border-sky-200 bg-sky-50 rounded-3xl p-5 text-xs mt-3">
+)}
+<div className="border border-sky-200 bg-sky-50 rounded-3xl p-5 text-xs mt-3">
   <p className="font-black text-sky-700 text-sm flex items-center gap-1.5">
     <span className="text-base">📦</span>
     {deliveryMethod === 'retiro' ? getRetiroMessage() : getDeliveryMessage()}
