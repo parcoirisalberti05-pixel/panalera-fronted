@@ -75,11 +75,7 @@ const finalTotal = total + (shippingCost || 0);
 };
 
 const getRetiroMessage = () => {
-  const diaSemana = new Date().getDay();
-  if (diaSemana === 0) {
-    return 'Horario de atención: Domingo de 09:45 a 13:15hs';
-  }
-  return 'Horario de atención: Lunes a sábado de 9:15 a 13:15hs y de 17:00 a 20:30hs';
+  return 'Horario de atención: Lunes a sábado de 9:15 a 13:15hs y de 17:00 a 20:30hs. Domingo de 9:45 a 13:15hs';
 };
 useEffect(() => {
   if (deliveryMethod !== 'domicilio') return;
