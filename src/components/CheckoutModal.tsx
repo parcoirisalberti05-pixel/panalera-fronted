@@ -75,7 +75,7 @@ const finalTotal = total + (shippingCost || 0);
 };
 
 const getRetiroMessage = () => {
-  return 'Horario de atención: Lunes a sábado de 9:15 a 13:15hs y de 17:00 a 20:30hs. Domingo de 9:45 a 13:15hs';
+  return 'Lunes a sábado de 9:15 a 13:15hs y de 17:00 a 20:30hs.|Domingo de 9:45 a 13:15hs';
 };
 useEffect(() => {
   if (deliveryMethod !== 'domicilio') return;
@@ -677,10 +677,17 @@ useEffect(() => {
 </div>
 )}
 <div className="border border-sky-200 bg-sky-50 rounded-3xl p-5 text-xs mt-3">
-  <p className="font-black text-sky-700 text-sm flex items-center gap-1.5">
+  <p className="flex items-center gap-1.5 mb-1">
     <span className="text-base">📦</span>
-    {deliveryMethod === 'retiro' ? getRetiroMessage() : getDeliveryMessage()}
+    {deliveryMethod === 'retiro' ? 'Horario de atención:' : getDeliveryMessage()}
   </p>
+  {deliveryMethod === 'retiro' && (
+    <ul className="list-disc list-inside text-xs font-bold ml-1">
+      {getRetiroMessage().split('|').map((linea, i) => (
+        <li key={i}>{linea}</li>
+      ))}
+    </ul>
+  )}
 </div>
                    
                     {/* Security Trust badge */}
