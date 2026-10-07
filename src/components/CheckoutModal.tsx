@@ -681,7 +681,7 @@ useEffect(() => {
     {deliveryMethod === 'retiro' ? 'Horario de atención:' : getDeliveryMessage()}
   </p>
   {deliveryMethod === 'retiro' && (
-    <ul className="list-disc list-inside text-xs font-bold ml-1">
+    <ul className="list-disc list-inside text-xs font-bold ml-1 text-sky-700">
       {getRetiroMessage().split('|').map((linea, i) => (
         <li key={i}>{linea}</li>
       ))}
