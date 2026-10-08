@@ -676,7 +676,7 @@ useEffect(() => {
 </div>
 )}
 <div className="border border-sky-200 bg-sky-50 rounded-3xl p-5 text-xs mt-3">
-  <p className="flex items-center gap-1.5 mb-1">
+  <p className="flex items-center gap-1.5 mb-1 font-black text-sky-700 text-sm">
     <span className="text-base">📦</span>
     {deliveryMethod === 'retiro' ? 'Horario de atención:' : getDeliveryMessage()}
   </p>
