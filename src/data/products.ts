@@ -526,6 +526,22 @@ import vasoLoopiPicoVaron210 from '../assets/images/Loopi/Vaso_Loopi_pico_de_sil
 import vasoLoopiPicoVaron420 from '../assets/images/Loopi/Vaso_Loopi_pico_de_silicona_varon_420ml.webp';
 // @ts-expect-error - image asset
 import vasoLoopiSorbeteNena200 from '../assets/images/Loopi/Vaso_Loopi_sorbete_nena_200ml.webp';
+// @ts-expect-error - image asset
+import chupeteLoopi06Celeste from '../assets/images/Loopi/Chupete_Loopi_0-6m_celeste.webp';
+// @ts-expect-error - image asset
+import chupeteLoopi06x2Celeste from '../assets/images/Loopi/Chupete_Loopi_0-6m_por_2_celeste.webp';
+// @ts-expect-error - image asset
+import chupeteLoopi06x2Rosa from '../assets/images/Loopi/Chupete_Loopi_0-6m_por_2_Rosa.webp';
+// @ts-expect-error - image asset
+import chupeteLoopi618x2Celeste from '../assets/images/Loopi/Chupete_Loopi_6-18m_por_2_Celeste.webp';
+// @ts-expect-error - image asset
+import chupeteLoopi618x2Rosa from '../assets/images/Loopi/Chupete_Loopi_6-18m_por_2_Rosa.webp';
+// @ts-expect-error - image asset
+import chupeteSiliconaLoopiAnatomico from '../assets/images/Loopi/Chupete_Silicona_Loopi_Anatomico_0-6m.webp';
+// @ts-expect-error - image asset
+import chupeteSiliconaLoopiRedondo from '../assets/images/Loopi/Chupete_Silicona_Loopi_Redondo_0-6m.webp';
+// @ts-expect-error - image asset
+import tetinaLoopiX2FlujoMedio from '../assets/images/Loopi/Tetina_Loopi_por_2_Flujo_Medio.webp';
 
 // Natelle
 // @ts-expect-error - image asset
@@ -3955,6 +3971,118 @@ export const PRODUCTS: Product[] = [
     rating: 4.8,
     reviews: 22,
     stock: 20,
+    featured: false,
+    brand: 'Loopi'
+  },
+  {
+    id: 'acc-loopi-chupete-06-celeste',
+    name: 'Chupete Loopi 0-6m Celeste',
+    description: 'Chupete Loopi para bebés de 0 a 6 meses.',
+    price: 2500,
+    category: 'accesorios',
+    subCategory: 'Loopi',
+    image: chupeteLoopi06Celeste,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Loopi'
+  },
+  {
+    id: 'acc-loopi-chupete-06-x2-celeste',
+    name: 'Chupete Loopi 0-6m por 2 Celeste',
+    description: 'Set de 2 chupetes Loopi para bebés de 0 a 6 meses.',
+    price: 5500,
+    category: 'accesorios',
+    subCategory: 'Loopi',
+    image: chupeteLoopi06x2Celeste,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Loopi'
+  },
+  {
+    id: 'acc-loopi-chupete-06-x2-rosa',
+    name: 'Chupete Loopi 0-6m por 2 Rosa',
+    description: 'Set de 2 chupetes Loopi para bebés de 0 a 6 meses.',
+    price: 5500,
+    category: 'accesorios',
+    subCategory: 'Loopi',
+    image: chupeteLoopi06x2Rosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Loopi'
+  },
+  {
+    id: 'acc-loopi-chupete-618-x2-celeste',
+    name: 'Chupete Loopi 6-18m por 2 Celeste',
+    description: 'Set de 2 chupetes Loopi para bebés de 6 a 18 meses.',
+    price: 5500,
+    category: 'accesorios',
+    subCategory: 'Loopi',
+    image: chupeteLoopi618x2Celeste,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Loopi'
+  },
+  {
+    id: 'acc-loopi-chupete-618-x2-rosa',
+    name: 'Chupete Loopi 6-18m por 2 Rosa',
+    description: 'Set de 2 chupetes Loopi para bebés de 6 a 18 meses.',
+    price: 5500,
+    category: 'accesorios',
+    subCategory: 'Loopi',
+    image: chupeteLoopi618x2Rosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Loopi'
+  },
+  {
+    id: 'acc-loopi-chupete-silicona-anatomico',
+    name: 'Chupete de Silicona Loopi Anatómico 0-6m',
+    description: 'Chupete de silicona Loopi anatómico para bebés de 0 a 6 meses.',
+    price: 2500,
+    category: 'accesorios',
+    subCategory: 'Loopi',
+    image: chupeteSiliconaLoopiAnatomico,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Loopi'
+  },
+  {
+    id: 'acc-loopi-chupete-silicona-redondo',
+    name: 'Chupete de Silicona Loopi Redondo 0-6m',
+    description: 'Chupete de silicona Loopi redondo para bebés de 0 a 6 meses.',
+    price: 2500,
+    category: 'accesorios',
+    subCategory: 'Loopi',
+    image: chupeteSiliconaLoopiRedondo,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Loopi'
+  },
+  {
+    id: 'acc-loopi-tetina-x2-flujo-medio',
+    name: 'Tetina Loopi por 2 Flujo Medio +6m',
+    description: 'Set de 2 tetinas Loopi de flujo medio, para bebés desde los 6 meses.',
+    price: 4500,
+    category: 'accesorios',
+    subCategory: 'Loopi',
+    image: tetinaLoopiX2FlujoMedio,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
     featured: false,
     brand: 'Loopi'
   },
