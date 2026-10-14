@@ -550,6 +550,10 @@ import vasoNatelleVaron250 from '../assets/images/Natelle/Vaso_Natelle_Varon_250
 import cucharaDispitaNena from '../assets/images/Dispita/Cuchara_punta_silicona_Dispita_nena.webp';
 // @ts-expect-error - image asset
 import cucharaDispitaVaron from '../assets/images/Dispita/Cuchara_punta_silicona_Dispita_varon.webp';
+// @ts-expect-error - image asset
+import chupeteDispitaSiliconaA2 from '../assets/images/Dispita/Chupete_Dispita_silicona_A2.webp';
+// @ts-expect-error - image asset
+import chupeteDispitaSiliconaR2 from '../assets/images/Dispita/Chupete_Dispita_silicona_R2.webp';
 
 // Vaita
 // @ts-expect-error - image asset
@@ -4096,6 +4100,34 @@ export const PRODUCTS: Product[] = [
     reviews: 27,
     stock: 25,
     featured: true,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-chupete-a2',
+    name: 'Chupete de Silicona Dispita A2',
+    description: 'Chupete de silicona Dispita modelo A2.',
+    price: 4900,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: chupeteDispitaSiliconaA2,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-chupete-r2',
+    name: 'Chupete de Silicona Dispita R2',
+    description: 'Chupete de silicona Dispita modelo R2.',
+    price: 4900,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: chupeteDispitaSiliconaR2,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
     brand: 'Dispita'
   },
 
