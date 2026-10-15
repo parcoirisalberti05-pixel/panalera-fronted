@@ -558,6 +558,20 @@ import platoTermicoNatelleVaron from '../assets/images/Natelle/Plato_Termico_Nat
 import vasoNatelleNena250 from '../assets/images/Natelle/Vaso_Natelle_Nena_250_ml.webp';
 // @ts-expect-error - image asset
 import vasoNatelleVaron250 from '../assets/images/Natelle/Vaso_Natelle_Varon_250_ml.webp';
+// @ts-expect-error - image asset
+import chupeteNatelle0Celeste from '../assets/images/Natelle/Chupete_Natelle_0_Meses_Celeste.webp';
+// @ts-expect-error - image asset
+import chupeteNatelle0Rosa from '../assets/images/Natelle/Chupete_Natelle_0_Meses_Rosa.webp';
+// @ts-expect-error - image asset
+import chupeteNatelle6Celeste from '../assets/images/Natelle/Chupete_Natelle_6_Meses_Celeste.webp';
+// @ts-expect-error - image asset
+import chupeteNatelle6Rosa from '../assets/images/Natelle/Chupete_Natelle_6_Meses_Rosa.webp';
+// @ts-expect-error - image asset
+import mamaderaNatelle250Blanco from '../assets/images/Natelle/Mamadera_Natelle_250ml_Blanco.webp';
+// @ts-expect-error - image asset
+import mamaderaNatelle250Rosa9017 from '../assets/images/Natelle/Mamadera_Natelle_250ml_Rosa.webp';
+// @ts-expect-error - image asset
+import mamaderaNatelle250Rosa9018 from '../assets/images/Natelle/Mamadera_Natelle_250ml_Rosa_art.9018.webp';
 
 // Dispita
 // @ts-expect-error - image asset
@@ -4181,6 +4195,104 @@ export const PRODUCTS: Product[] = [
     rating: 4.7,
     reviews: 20,
     stock: 18,
+    featured: false,
+    brand: 'Natelle'
+  },
+  {
+    id: 'acc-natelle-mamadera-n250',
+    name: 'Mamadera Natelle Nena 250ml Rosa art.9018',
+    description: 'Mamadera Natelle de 250ml en color rosa.',
+    price: 8500,
+    category: 'accesorios',
+    subCategory: 'Natelle',
+    image: mamaderaNatelle250Rosa9018,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Natelle'
+  },
+  {
+    id: 'acc-natelle-mamadera-n250-b',
+    name: 'Mamadera Natelle Nena 250ml Rosa art.9017',
+    description: 'Mamadera Natelle de 250ml en color rosa.',
+    price: 8500,
+    category: 'accesorios',
+    subCategory: 'Natelle',
+    image: mamaderaNatelle250Rosa9017,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Natelle'
+  },
+  {
+    id: 'acc-natelle-mamadera-250-blanca',
+    name: 'Mamadera Natelle 250ml Blanca',
+    description: 'Mamadera Natelle de 250ml en color blanco.',
+    price: 8500,
+    category: 'accesorios',
+    subCategory: 'Natelle',
+    image: mamaderaNatelle250Blanco,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Natelle'
+  },
+  {
+    id: 'acc-natelle-chupete-0-celeste',
+    name: 'Chupete Natelle 0 Meses Celeste',
+    description: 'Chupete Natelle para bebés desde el nacimiento.',
+    price: 4600,
+    category: 'accesorios',
+    subCategory: 'Natelle',
+    image: chupeteNatelle0Celeste,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Natelle'
+  },
+  {
+    id: 'acc-natelle-chupete-0-rosa',
+    name: 'Chupete Natelle 0 Meses Rosa',
+    description: 'Chupete Natelle para bebés desde el nacimiento.',
+    price: 4600,
+    category: 'accesorios',
+    subCategory: 'Natelle',
+    image: chupeteNatelle0Rosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Natelle'
+  },
+  {
+    id: 'acc-natelle-chupete-6-celeste',
+    name: 'Chupete Natelle 6 Meses Celeste',
+    description: 'Chupete Natelle para bebés desde los 6 meses.',
+    price: 4600,
+    category: 'accesorios',
+    subCategory: 'Natelle',
+    image: chupeteNatelle6Celeste,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Natelle'
+  },
+  {
+    id: 'acc-natelle-chupete-6-rosa',
+    name: 'Chupete Natelle 6 Meses Rosa',
+    description: 'Chupete Natelle para bebés desde los 6 meses.',
+    price: 4600,
+    category: 'accesorios',
+    subCategory: 'Natelle',
+    image: chupeteNatelle6Rosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
     featured: false,
     brand: 'Natelle'
   },
