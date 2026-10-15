@@ -549,8 +549,6 @@ import mamaderaNatelle125Nena from '../assets/images/Natelle/Mamadera_Natelle_12
 // @ts-expect-error - image asset
 import mamaderaNatelle125Varon from '../assets/images/Natelle/Mamadera_Natelle_125_varon.webp';
 // @ts-expect-error - image asset
-import mamaderaNatelle250Nena from '../assets/images/Natelle/Mamadera_Natelle_250_ml_nena.webp';
-// @ts-expect-error - image asset
 import mamaderaNatelle250Varon from '../assets/images/Natelle/Mamadera_Natelle_250_ml_varon.webp';
 // @ts-expect-error - image asset
 import platoTermicoNatelleNena from '../assets/images/Natelle/Plato_Termico_Natelle_Nena.webp';
@@ -4116,21 +4114,7 @@ export const PRODUCTS: Product[] = [
     featured: false,
     brand: 'Natelle'
   },
-  {
-    id: 'acc-natelle-mamadera-n250',
-    name: 'Mamadera Natelle Nena 250ml',
-    description: 'Mamadera Natelle de 250ml en color rosa. Práctico diseño de fácil agarre para la bebé.',
-    price: 8500,
-    category: 'accesorios',
-    subCategory: 'Natelle',
-    image: mamaderaNatelle250Nena,
-    rating: 4.7,
-    reviews: 15,
-    stock: 18,
-    featured: false,
-    brand: 'Natelle'
-  },
-  {
+    {
     id: 'acc-natelle-mamadera-v250',
     name: 'Mamadera Natelle Varón 250ml',
     description: 'Mamadera Natelle de 250ml en color celeste, excelente flujo controlado y materiales libres de bpa.',
