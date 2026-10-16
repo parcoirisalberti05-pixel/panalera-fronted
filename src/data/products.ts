@@ -585,16 +585,6 @@ import chupeteDispitaSiliconaR2 from '../assets/images/Dispita/Chupete_Dispita_s
 
 // Vaita
 // @ts-expect-error - image asset
-import mamaderaVaitaUnisex3057 from '../assets/images/Vaita/Mamadera_Vaita_(3057)_unisex.webp';
-// @ts-expect-error - image asset
-import mamaderaVaitaNena3059 from '../assets/images/Vaita/Mamadera_Vaita_(3059)_nena.webp';
-// @ts-expect-error - image asset
-import mamaderaVaitaVaron3061 from '../assets/images/Vaita/Mamadera_Vaita_(3061)_varon.webp';
-// @ts-expect-error - image asset
-import mamaderaVaitaVaron3063 from '../assets/images/Vaita/Mamadera_Vaita_(3063)_varon.webp';
-// @ts-expect-error - image asset
-import mamaderaVaitaUnisex3063 from '../assets/images/Vaita/Mamadera_Vaita_unisex_(3063).webp';
-// @ts-expect-error - image asset
 import platoTermicoVaitaNena from '../assets/images/Vaita/Plato_Termico_Vaita_Nena.webp';
 // @ts-expect-error - image asset
 import platoTermicoVaitaVaron from '../assets/images/Vaita/Plato_Termico_Vaita_Varon.webp';
@@ -4356,76 +4346,6 @@ export const PRODUCTS: Product[] = [
   },
 
   // Vaita
-  {
-    id: 'acc-vaita-mamadera-3057',
-    name: 'Mamadera Vaita Decorada Unisex (3057) 250ml',
-    description: 'Mamadera de plástico reforzado decorado con motivos infantiles hermosos de 250ml.',
-    price: 7900,
-    category: 'accesorios',
-    subCategory: 'Vaita',
-    image: mamaderaVaitaUnisex3057,
-    rating: 4.6,
-    reviews: 10,
-    stock: 22,
-    featured: false,
-    brand: 'Vaita'
-  },
-  {
-    id: 'acc-vaita-mamadera-nena',
-    name: 'Mamadera Vaita Decorada Nena (3059) 250ml',
-    description: 'Mamadera Vaita con tetina de silicona talle 2 y hermosos motivos decorados.',
-    price: 9600,
-    category: 'accesorios',
-    subCategory: 'Vaita',
-    image: mamaderaVaitaNena3059,
-    rating: 4.7,
-    reviews: 13,
-    stock: 18,
-    featured: false,
-    brand: 'Vaita'
-  },
-  {
-    id: 'acc-vaita-mamadera-3061',
-    name: 'Mamadera Vaita Decorada Varón (3061) 240ml',
-    description: 'Mamadera Vaita decorada de 240ml con motivos masculinos tiernos y tetina anticólicos muy suave.',
-    price: 9600,
-    category: 'accesorios',
-    subCategory: 'Vaita',
-    image: mamaderaVaitaVaron3061,
-    rating: 4.7,
-    reviews: 11,
-    stock: 15,
-    featured: false,
-    brand: 'Vaita'
-  },
-  {
-    id: 'acc-vaita-mamadera-3063v',
-    name: 'Mamadera Vaita Decorada Varón (3063) 340ml',
-    description: 'Mamadera de gran capacidad Vaita (340ml) con diseño de dinosaurios, tetina flujo rápido de silicona.',
-    price: 11200,
-    category: 'accesorios',
-    subCategory: 'Vaita',
-    image: mamaderaVaitaVaron3063,
-    rating: 4.8,
-    reviews: 14,
-    stock: 14,
-    featured: false,
-    brand: 'Vaita'
-  },
-  {
-    id: 'acc-vaita-mamadera-3063u',
-    name: 'Mamadera Vaita Decorada Unisex (3063) 340ml',
-    description: 'Mamadera de gran capacidad Vaita (340ml) con motivos neutrales pasteles, tetina de flujo rápido.',
-    price: 11200,
-    category: 'accesorios',
-    subCategory: 'Vaita',
-    image: mamaderaVaitaUnisex3063,
-    rating: 4.7,
-    reviews: 9,
-    stock: 12,
-    featured: false,
-    brand: 'Vaita'
-  },
   {
     id: 'acc-vaita-plato-termico-nena',
     name: 'Plato Térmico Vaita Nena',
