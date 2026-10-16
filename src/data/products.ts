@@ -642,6 +642,10 @@ import mamaderaVaita_m330baAsas3063Celeste from '../assets/images/Vaita/Mamadera
 import mamaderaVaita_m330baAsas3063Rosa from '../assets/images/Vaita/Mamadera_Vaita_330ml_Boca_Ancha_con_Azas_Rosa.webp';
 // @ts-expect-error - image asset
 import mamaderaVaita_m330baAsas3063Verde from '../assets/images/Vaita/Mamadera_Vaita_330ml_Boca_Ancha_con_Azas_Verde.webp';
+// @ts-expect-error - image asset
+import mamaderaVaita_m250ba3049Blanco from '../assets/images/Vaita/Mamadera_Vaita_250ml_Boca_Ancha_Blanco.webp';
+// @ts-expect-error - image asset
+import mamaderaVaita_m250ba3049Celeste from '../assets/images/Vaita/Mamadera_Vaita_250ml_Boca_Ancha_Celeste.webp';
 
 // Varias Marcas
 // @ts-expect-error - image asset
@@ -4792,6 +4796,34 @@ export const PRODUCTS: Product[] = [
     category: 'accesorios',
     subCategory: 'Vaita',
     image: mamaderaVaita_m330baAsas3063Verde,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Vaita'
+  },
+  {
+    id: 'acc-vaita-mam-250ml-boca-ancha-blanco-art-3049',
+    name: 'Mamadera Vaita 250ml Boca Ancha Blanco art.3049',
+    description: 'Mamadera Vaita para bebés.',
+    price: 5600,
+    category: 'accesorios',
+    subCategory: 'Vaita',
+    image: mamaderaVaita_m250ba3049Blanco,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Vaita'
+  },
+  {
+    id: 'acc-vaita-mam-250ml-boca-ancha-celeste-art-3049',
+    name: 'Mamadera Vaita 250ml Boca Ancha Celeste art.3049',
+    description: 'Mamadera Vaita para bebés.',
+    price: 5600,
+    category: 'accesorios',
+    subCategory: 'Vaita',
+    image: mamaderaVaita_m250ba3049Celeste,
     rating: 0,
     reviews: 0,
     stock: 10,
