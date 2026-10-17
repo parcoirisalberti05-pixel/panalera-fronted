@@ -415,14 +415,6 @@ import mamaderaAventNatural330 from '../assets/images/Avent/Mamadera_Avent_Natur
 
 // Nuk
 // @ts-expect-error - image asset
-import chupeteNukNena06m from '../assets/images/Nuk/Chupete_Nuk_nena_0-6m.webp';
-// @ts-expect-error - image asset
-import chupeteNukNena2_06m from '../assets/images/Nuk/Chupete_Nuk_nena_2_0-6m.webp';
-// @ts-expect-error - image asset
-import chupeteNukUnisex06m from '../assets/images/Nuk/Chupete_Nuk_unisex_0-6m.webp';
-// @ts-expect-error - image asset
-import chupeteNukVaron618m from '../assets/images/Nuk/Chupete_Nuk_varon_6-18m.webp';
-// @ts-expect-error - image asset
 import mamaderaNukNena150 from '../assets/images/Nuk/Mamadera_Nuk_nena_150ml.webp';
 // @ts-expect-error - image asset
 import mamaderaNukNena300 from '../assets/images/Nuk/Mamadera_Nuk_nena_300ml.webp';
@@ -3254,63 +3246,7 @@ export const PRODUCTS: Product[] = [
   },
 
   // Nuk
-  {
-    id: 'acc-nuk-chupete-nena',
-    name: 'Chupete Nuk Sensitive Todo Silicona 0-6m',
-    description: 'Chupete de silicona extra suave Nuk Sensitive. Forma ortodóntica Nuk que se adapta perfectamente al paladar del bebé.',
-    price: 16300,
-    category: 'accesorios',
-    subCategory: 'Nuk',
-    image: chupeteNukNena06m,
-    rating: 4.7,
-    reviews: 19,
-    stock: 20,
-    featured: false,
-    brand: 'Nuk'
-  },
-  {
-    id: 'acc-nuk-chupete-nena-space',
-    name: 'Chupete Nuk Space x2 0-6m Nena',
-    description: 'Pack de 2 chupetes Nuk Space con grandes canales de ventilación para pieles extremadamente sensibles. Motivos tiernos de nena.',
-    price: 16300,
-    category: 'accesorios',
-    subCategory: 'Nuk',
-    image: chupeteNukNena2_06m,
-    rating: 4.8,
-    reviews: 22,
-    stock: 15,
-    featured: false,
-    brand: 'Nuk'
-  },
-  {
-    id: 'acc-nuk-chupete-unisex',
-    name: 'Chupete Nuk Genius Silicona 0-6m',
-    description: 'Chupete Nuk Genius con tetina anatómica optimizada que minimiza la presión en los dientes y la mandíbula del lactante.',
-    price: 16300,
-    category: 'accesorios',
-    subCategory: 'Nuk',
-    image: chupeteNukUnisex06m,
-    rating: 4.7,
-    reviews: 14,
-    stock: 18,
-    featured: false,
-    brand: 'Nuk'
-  },
-  {
-    id: 'acc-nuk-chupete-varon-trendline',
-    name: 'Chupete Nuk Trendline 6-18m Varón',
-    description: 'Chupete Nuk Trendline con botón plano para evitar marcas de apoyo. Forma anatómica y lindos diseños de varón.',
-    price: 16300,
-    category: 'accesorios',
-    subCategory: 'Nuk',
-    image: chupeteNukVaron618m,
-    rating: 4.8,
-    reviews: 17,
-    stock: 22,
-    featured: false,
-    brand: 'Nuk'
-  },
-  {
+    {
     id: 'acc-nuk-mamadera-nena-150',
     name: 'Mamadera Nuk First Choice+ Nena 150ml',
     description: 'Mamadera de boca ancha Nuk de 150ml con tetina de silicona ortodóntica muy suave que imita el pezón materno durante la lactancia.',
