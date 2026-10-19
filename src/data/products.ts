@@ -620,6 +620,18 @@ import cucharaDispitaVaron from '../assets/images/Dispita/Cuchara_punta_silicona
 import chupeteDispitaSiliconaA2 from '../assets/images/Dispita/Chupete_Dispita_silicona_A2.webp';
 // @ts-expect-error - image asset
 import chupeteDispitaSiliconaR2 from '../assets/images/Dispita/Chupete_Dispita_silicona_R2.webp';
+// @ts-expect-error - image asset
+import dispitaBiberonVidrio120 from '../assets/images/Dispita/Biberon_Dispita_de_Vidrio_120ml.webp';
+// @ts-expect-error - image asset
+import dispitaMamaderaVidrioRosa225 from '../assets/images/Dispita/Mamadera_Dispita_de_Vidrio_Rosa_225ml.webp';
+// @ts-expect-error - image asset
+import dispitaMamaderaVidrioVerde225 from '../assets/images/Dispita/Mamadera_Dispita_de_Vidrio_Verde_225ml.webp';
+// @ts-expect-error - image asset
+import dispitaVasoAntiderrameAzul from '../assets/images/Dispita/Vaso_antiderrame_con_asas_Dispita_Azul.webp';
+// @ts-expect-error - image asset
+import dispitaVasoAntiderrameRosa from '../assets/images/Dispita/Vaso_antiderrame_con_asas_Dispita_Rosa.webp';
+// @ts-expect-error - image asset
+import dispitaVasoAntiderrameVerde from '../assets/images/Dispita/Vaso_antiderrame_con_asas_Dispita_Verde.webp';
 
 // Vaita
 // @ts-expect-error - image asset
@@ -4692,6 +4704,90 @@ export const PRODUCTS: Product[] = [
     category: 'accesorios',
     subCategory: 'Dispita',
     image: chupeteDispitaSiliconaR2,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-biberon-vidrio-120',
+    name: 'Biberón Dispita de Vidrio 120ml',
+    description: 'Biberón Dispita de vidrio de 120ml.',
+    price: 11000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaBiberonVidrio120,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-mamadera-vidrio-rosa-225',
+    name: 'Mamadera Dispita de Vidrio Rosa 225ml art.11034',
+    description: 'Mamadera Dispita de vidrio de 225ml.',
+    price: 7500,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaMamaderaVidrioRosa225,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-mamadera-vidrio-verde-225',
+    name: 'Mamadera Dispita de Vidrio Verde 225ml art.11034',
+    description: 'Mamadera Dispita de vidrio de 225ml.',
+    price: 7500,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaMamaderaVidrioVerde225,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-vaso-antiderrame-azul',
+    name: 'Vaso antiderrame con asas Dispita Azul art.10660',
+    description: 'Vaso antiderrame con asas Dispita.',
+    price: 14000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaVasoAntiderrameAzul,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-vaso-antiderrame-rosa',
+    name: 'Vaso antiderrame con asas Dispita Rosa art.10660',
+    description: 'Vaso antiderrame con asas Dispita.',
+    price: 14000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaVasoAntiderrameRosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-vaso-antiderrame-verde',
+    name: 'Vaso antiderrame con asas Dispita Verde art.10660',
+    description: 'Vaso antiderrame con asas Dispita.',
+    price: 14000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaVasoAntiderrameVerde,
     rating: 0,
     reviews: 0,
     stock: 10,
