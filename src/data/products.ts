@@ -570,6 +570,16 @@ import chupeteSiliconaLoopiAnatomico from '../assets/images/Loopi/Chupete_Silico
 import chupeteSiliconaLoopiRedondo from '../assets/images/Loopi/Chupete_Silicona_Loopi_Redondo_0-6m.webp';
 // @ts-expect-error - image asset
 import tetinaLoopiX2FlujoMedio from '../assets/images/Loopi/Tetina_Loopi_por_2_Flujo_Medio.webp';
+// @ts-expect-error - image asset
+import loopiVasoSorbete240Rosa from '../assets/images/Loopi/Vaso_con_sorbete_240ml_rosa.webp';
+// @ts-expect-error - image asset
+import loopiVasoSorbeteAsas200Azul from '../assets/images/Loopi/Vaso_Loopi_con_Sorbete_y_Azas_200ml_Azul.webp';
+// @ts-expect-error - image asset
+import loopiVasoSorbete300Celeste from '../assets/images/Loopi/Vaso_Loopi_Sorbete_300ml_Celeste.webp';
+// @ts-expect-error - image asset
+import loopiVasoSorbete300Rosa from '../assets/images/Loopi/Vaso_Loopi_Sorbete_300ml_Rosa.webp';
+// @ts-expect-error - image asset
+import loopiVasoSorbete300Verde from '../assets/images/Loopi/Vaso_Loopi_Sorbete_300ml_Verde.webp';
 
 // Natelle
 // @ts-expect-error - image asset
@@ -4356,6 +4366,76 @@ export const PRODUCTS: Product[] = [
     category: 'accesorios',
     subCategory: 'Loopi',
     image: tetinaLoopiX2FlujoMedio,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Loopi'
+  },
+  {
+    id: 'acc-loopi-vaso-sorbete-240-rosa',
+    name: 'Vaso con sorbete 240ml rosa art.9166',
+    description: 'Vaso Loopi de silicona con sorbete de 240ml.',
+    price: 10500,
+    category: 'accesorios',
+    subCategory: 'Loopi',
+    image: loopiVasoSorbete240Rosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Loopi'
+  },
+  {
+    id: 'acc-loopi-vaso-sorbete-asas-200-azul',
+    name: 'Vaso Loopi con Sorbete y Asas 200ml Azul',
+    description: 'Vaso Loopi con sorbete y asas de 200ml.',
+    price: 7500,
+    category: 'accesorios',
+    subCategory: 'Loopi',
+    image: loopiVasoSorbeteAsas200Azul,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Loopi'
+  },
+  {
+    id: 'acc-loopi-vaso-sorbete-300-celeste',
+    name: 'Vaso Loopi Sorbete 300ml Celeste art.9160',
+    description: 'Vaso Loopi con sorbete de 300ml.',
+    price: 8500,
+    category: 'accesorios',
+    subCategory: 'Loopi',
+    image: loopiVasoSorbete300Celeste,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Loopi'
+  },
+  {
+    id: 'acc-loopi-vaso-sorbete-300-rosa',
+    name: 'Vaso Loopi Sorbete 300ml Rosa art.9160',
+    description: 'Vaso Loopi con sorbete de 300ml.',
+    price: 8500,
+    category: 'accesorios',
+    subCategory: 'Loopi',
+    image: loopiVasoSorbete300Rosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Loopi'
+  },
+  {
+    id: 'acc-loopi-vaso-sorbete-300-verde',
+    name: 'Vaso Loopi Sorbete 300ml Verde art.9160',
+    description: 'Vaso Loopi con sorbete de 300ml.',
+    price: 8500,
+    category: 'accesorios',
+    subCategory: 'Loopi',
+    image: loopiVasoSorbete300Verde,
     rating: 0,
     reviews: 0,
     stock: 10,
