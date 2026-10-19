@@ -440,6 +440,42 @@ import vasoNukRojoFirst150 from '../assets/images/Nuk/Vaso_Nuk_rojo_First_Choice
 import vasoNukUnisexAction230 from '../assets/images/Nuk/Vaso_Nuk_unisex_Action_cup_230ml.webp';
 // @ts-expect-error - image asset
 import vasoNukUnisexFirst150 from '../assets/images/Nuk/Vaso_Nuk_unisex_First_Choice_150ml.webp';
+// @ts-expect-error - image asset
+import nukChupete1_18_36Rosa from '../assets/images/Nuk/Chupete_Nuk_por_1_18-36m_Rosa.webp';
+// @ts-expect-error - image asset
+import nukChupete2_0_6BlancoRosa from '../assets/images/Nuk/Chupete_Nuk_por_2_0-6m_Blanco-Rosa.webp';
+// @ts-expect-error - image asset
+import nukChupete2_0_6BlancoVerde from '../assets/images/Nuk/Chupete_Nuk_por_2_0-6m_Blanco-Verde.webp';
+// @ts-expect-error - image asset
+import nukChupete2_0_6Mickey from '../assets/images/Nuk/Chupete_Nuk_por_2_0-6m_Mickey.webp';
+// @ts-expect-error - image asset
+import nukChupete2_6_18BlancoRosa from '../assets/images/Nuk/Chupete_Nuk_por_2_6-18m_Blanco-Rosa.webp';
+// @ts-expect-error - image asset
+import nukChupete2_6_18Mickey from '../assets/images/Nuk/Chupete_Nuk_por_2_6-18m_Mickey.webp';
+// @ts-expect-error - image asset
+import nukChupete2_6_18NaranjaBlanco from '../assets/images/Nuk/Chupete_Nuk_por_2_6-18m_Naranja-Blanco.webp';
+// @ts-expect-error - image asset
+import nukChupete2_6_18VerdeCeleste from '../assets/images/Nuk/Chupete_Nuk_por_2_6-18m_Verde-Celeste.webp';
+// @ts-expect-error - image asset
+import nukChupete2_18_36BlancoRosa from '../assets/images/Nuk/Chupete_Nuk_por_2_18-36m_Blanco-Rosa.webp';
+// @ts-expect-error - image asset
+import nukChupete2_18_36VerdeCeleste from '../assets/images/Nuk/Chupete_Nuk_por_2_18-36m_Verde-Celeste.webp';
+// @ts-expect-error - image asset
+import nukMamadera0_6GrisMickey from '../assets/images/Nuk/Mamadera_Nuk_0-6_Gris_Mickey.webp';
+// @ts-expect-error - image asset
+import nukMamadera0mPerfectMatch from '../assets/images/Nuk/Mamadera_Nuk_0m_Perfect_Match.webp';
+// @ts-expect-error - image asset
+import nukTetina0_6 from '../assets/images/Nuk/Tetina_Nuk_0-6_Meses.webp';
+// @ts-expect-error - image asset
+import nukTetinaX2ForNatureS from '../assets/images/Nuk/Tetina_Nuk_por_2_for_Nature_S.webp';
+// @ts-expect-error - image asset
+import nukTetinaX2PerfectMatch0mS from '../assets/images/Nuk/Tetina_Nuk_por_2_Perfect_Match_0m_S.webp';
+// @ts-expect-error - image asset
+import nukTetinaSorbete from '../assets/images/Nuk/Tetina_Nuk_Sorbete.webp';
+// @ts-expect-error - image asset
+import nukVasoJuniorCupCeleste from '../assets/images/Nuk/Vaso_Nuk_Junior_Cup_Celeste_18m.webp';
+// @ts-expect-error - image asset
+import nukVasoJuniorCupRosa from '../assets/images/Nuk/Vaso_Nuk_Junior_Cup_Rosa_18m.webp';
 
 // Loopi
 // @ts-expect-error - image asset
@@ -3425,6 +3461,258 @@ export const PRODUCTS: Product[] = [
     rating: 4.7,
     reviews: 12,
     stock: 18,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-chupete-1-18-36-rosa',
+    name: 'Chupete Nuk por 1 18-36m Rosa',
+    description: 'Chupete Nuk para bebés de 18 a 36 meses.',
+    price: 10000,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukChupete1_18_36Rosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-chupete-2-0-6-blanco-rosa',
+    name: 'Chupete Nuk por 2 0-6m Blanco-Rosa',
+    description: 'Pack de 2 chupetes Nuk para bebés de 0 a 6 meses.',
+    price: 16300,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukChupete2_0_6BlancoRosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-chupete-2-0-6-blanco-verde',
+    name: 'Chupete Nuk por 2 0-6m Blanco-Verde',
+    description: 'Pack de 2 chupetes Nuk para bebés de 0 a 6 meses.',
+    price: 16300,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukChupete2_0_6BlancoVerde,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-chupete-2-0-6-mickey',
+    name: 'Chupete Nuk por 2 0-6m Mickey',
+    description: 'Pack de 2 chupetes Nuk Mickey para bebés de 0 a 6 meses.',
+    price: 18500,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukChupete2_0_6Mickey,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-chupete-2-6-18-blanco-rosa',
+    name: 'Chupete Nuk por 2 6-18m Blanco-Rosa',
+    description: 'Pack de 2 chupetes Nuk para bebés de 6 a 18 meses.',
+    price: 16300,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukChupete2_6_18BlancoRosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-chupete-2-6-18-mickey',
+    name: 'Chupete Nuk por 2 6-18m Mickey',
+    description: 'Pack de 2 chupetes Nuk Mickey para bebés de 6 a 18 meses.',
+    price: 18500,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukChupete2_6_18Mickey,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-chupete-2-6-18-naranja-blanco',
+    name: 'Chupete Nuk por 2 6-18m Naranja-Blanco',
+    description: 'Pack de 2 chupetes Nuk para bebés de 6 a 18 meses.',
+    price: 16300,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukChupete2_6_18NaranjaBlanco,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-chupete-2-6-18-verde-celeste',
+    name: 'Chupete Nuk por 2 6-18m Verde-Celeste',
+    description: 'Pack de 2 chupetes Nuk para bebés de 6 a 18 meses.',
+    price: 16300,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukChupete2_6_18VerdeCeleste,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-chupete-2-18-36-blanco-rosa',
+    name: 'Chupete Nuk por 2 18-36m Blanco-Rosa',
+    description: 'Pack de 2 chupetes Nuk para bebés de 18 a 36 meses.',
+    price: 16300,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukChupete2_18_36BlancoRosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-chupete-2-18-36-verde-celeste',
+    name: 'Chupete Nuk por 2 18-36m Verde-Celeste',
+    description: 'Pack de 2 chupetes Nuk para bebés de 18 a 36 meses.',
+    price: 16300,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukChupete2_18_36VerdeCeleste,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-mamadera-0-6-gris-mickey',
+    name: 'Mamadera Nuk 0-6 Gris Mickey',
+    description: 'Mamadera Nuk Mickey para bebés de 0 a 6 meses.',
+    price: 23000,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukMamadera0_6GrisMickey,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-mamadera-0m-perfect-match',
+    name: 'Mamadera Nuk 0m Perfect Match',
+    description: 'Mamadera Nuk Perfect Match desde el nacimiento.',
+    price: 22000,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukMamadera0mPerfectMatch,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-tetina-0-6',
+    name: 'Tetina Nuk 0-6 Meses',
+    description: 'Tetina Nuk de repuesto para bebés de 0 a 6 meses.',
+    price: 10000,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukTetina0_6,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-tetina-x2-for-nature-s',
+    name: 'Tetina Nuk por 2 for Nature S',
+    description: 'Pack de 2 tetinas Nuk for Nature talle S.',
+    price: 12500,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukTetinaX2ForNatureS,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-tetina-x2-perfect-match-0m-s',
+    name: 'Tetina Nuk por 2 Perfect Match 0m S',
+    description: 'Pack de 2 tetinas Nuk Perfect Match talle S desde 0 meses.',
+    price: 11000,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukTetinaX2PerfectMatch0mS,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-tetina-sorbete',
+    name: 'Tetina Nuk Sorbete',
+    description: 'Tetina Nuk con pico sorbete.',
+    price: 9000,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukTetinaSorbete,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-vaso-junior-cup-celeste',
+    name: 'Vaso Nuk Junior Cup Celeste 18m',
+    description: 'Vaso Nuk Junior Cup para bebés desde 18 meses.',
+    price: 25500,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukVasoJuniorCupCeleste,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Nuk'
+  },
+  {
+    id: 'acc-nuk-vaso-junior-cup-rosa',
+    name: 'Vaso Nuk Junior Cup Rosa 18m',
+    description: 'Vaso Nuk Junior Cup para bebés desde 18 meses.',
+    price: 25500,
+    category: 'accesorios',
+    subCategory: 'Nuk',
+    image: nukVasoJuniorCupRosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
     featured: false,
     brand: 'Nuk'
   },
