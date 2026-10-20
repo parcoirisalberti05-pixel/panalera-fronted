@@ -677,13 +677,9 @@ import platoTermicoVaitaNena from '../assets/images/Vaita/Plato_Termico_Vaita_Ne
 // @ts-expect-error - image asset
 import platoTermicoVaitaVaron from '../assets/images/Vaita/Plato_Termico_Vaita_Varon.webp';
 // @ts-expect-error - image asset
-import set2CucharasVaita from '../assets/images/Vaita/Set_2_cucharas_Vaita_varon_y_nena.webp';
-// @ts-expect-error - image asset
 import setCepilloPeineVaitaNena from '../assets/images/Vaita/Set_cepillo_y_peine_Vaita_nena.webp';
 // @ts-expect-error - image asset
 import setCepilloPeineVaitaVaron from '../assets/images/Vaita/Set_cepillo_y_peine_Vaita_varon.webp';
-// @ts-expect-error - image asset
-import tenedorCucharaVaita from '../assets/images/Vaita/Tenedor_y_cuchara_vaita.webp';
 // @ts-expect-error - image asset
 import chupeteVaita0Celeste from '../assets/images/Vaita/Chupete_Vaita_0_Meses_Redondo_Celeste.webp';
 // @ts-expect-error - image asset
@@ -5128,21 +5124,7 @@ export const PRODUCTS: Product[] = [
     featured: true,
     brand: 'Vaita'
   },
-  {
-    id: 'acc-vaita-set-cucharas',
-    name: 'Set de 2 Cucharas Vaita Varón y Nena',
-    description: 'Dúo de cucharas infantiles ergonómicas en color celeste y rosa, perfectas para las primeras comidas independientes.',
-    price: 4600,
-    category: 'accesorios',
-    subCategory: 'Vaita',
-    image: set2CucharasVaita,
-    rating: 4.7,
-    reviews: 18,
-    stock: 25,
-    featured: false,
-    brand: 'Vaita'
-  },
-  {
+    {
     id: 'acc-vaita-cepillo-peine',
     name: 'Set de Cepillo y Peine Vaita Nena',
     description: 'Set para el cuidado del cabello del bebé con cepillo de cerdas extra suaves y peine con puntas redondeadas de seguridad.',
@@ -5167,20 +5149,6 @@ export const PRODUCTS: Product[] = [
     rating: 4.8,
     reviews: 12,
     stock: 20,
-    featured: false,
-    brand: 'Vaita'
-  },
-  {
-    id: 'acc-vaita-tenedor-cuchara',
-    name: 'Set de Tenedor y Cuchara Vaita de Acero',
-    description: 'Set de cubiertos de acero inoxidable con mangos redondeados y seguros adaptados para la motricidad fina del bebé.',
-    price: 6200,
-    category: 'accesorios',
-    subCategory: 'Vaita',
-    image: tenedorCucharaVaita,
-    rating: 4.9,
-    reviews: 26,
-    stock: 18,
     featured: false,
     brand: 'Vaita'
   },
