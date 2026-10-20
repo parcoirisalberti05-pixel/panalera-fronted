@@ -580,6 +580,10 @@ import loopiVasoSorbete300Celeste from '../assets/images/Loopi/Vaso_Loopi_Sorbet
 import loopiVasoSorbete300Rosa from '../assets/images/Loopi/Vaso_Loopi_Sorbete_300ml_Rosa.webp';
 // @ts-expect-error - image asset
 import loopiVasoSorbete300Verde from '../assets/images/Loopi/Vaso_Loopi_Sorbete_300ml_Verde.webp';
+// @ts-expect-error - image asset
+import loopiCucharaBordesAzul from '../assets/images/Loopi/Cuchara_con_Bordes_Blandos_Loopi_Azul.webp';
+// @ts-expect-error - image asset
+import loopiCucharaBordesRosa from '../assets/images/Loopi/Cuchara_con_Bordes_Blandos_Loopi_Rosa.webp';
 
 // Natelle
 // @ts-expect-error - image asset
@@ -726,6 +730,10 @@ import mamaderaVaita_m330baAsas3063Verde from '../assets/images/Vaita/Mamadera_V
 import mamaderaVaita_m250ba3049Blanco from '../assets/images/Vaita/Mamadera_Vaita_250ml_Boca_Ancha_Blanco.webp';
 // @ts-expect-error - image asset
 import mamaderaVaita_m250ba3049Celeste from '../assets/images/Vaita/Mamadera_Vaita_250ml_Boca_Ancha_Celeste.webp';
+// @ts-expect-error - image asset
+import vaitaCucharaTenedorRosa from '../assets/images/Vaita/Cuchara_y_Tenedor_Plastico_Vaita_Rosa.webp';
+// @ts-expect-error - image asset
+import vaitaCucharaTenedorVerde from '../assets/images/Vaita/Cuchara_y_Tenedor_Plastico_Vaita_Verde.webp';
 
 // Varias Marcas
 // @ts-expect-error - image asset
@@ -4484,6 +4492,34 @@ export const PRODUCTS: Product[] = [
     featured: false,
     brand: 'Loopi'
   },
+  {
+    id: 'acc-loopi-cuchara-bordes-azul',
+    name: 'Cuchara con Bordes Blandos Loopi Azul',
+    description: 'Cuchara Loopi con bordes blandos, suave con las encías del bebé.',
+    price: 3000,
+    category: 'accesorios',
+    subCategory: 'Loopi',
+    image: loopiCucharaBordesAzul,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Loopi'
+  },
+  {
+    id: 'acc-loopi-cuchara-bordes-rosa',
+    name: 'Cuchara con Bordes Blandos Loopi Rosa',
+    description: 'Cuchara Loopi con bordes blandos, suave con las encías del bebé.',
+    price: 3000,
+    category: 'accesorios',
+    subCategory: 'Loopi',
+    image: loopiCucharaBordesRosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Loopi'
+  },
 
   // Natelle
   {
@@ -5464,6 +5500,34 @@ export const PRODUCTS: Product[] = [
     category: 'accesorios',
     subCategory: 'Vaita',
     image: mamaderaVaita_m250ba3049Celeste,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Vaita'
+  },
+  {
+    id: 'acc-vaita-cuchara-tenedor-rosa',
+    name: 'Cuchara y Tenedor Plástico Vaita Rosa',
+    description: 'Set de cuchara y tenedor de plástico Vaita para bebés.',
+    price: 3000,
+    category: 'accesorios',
+    subCategory: 'Vaita',
+    image: vaitaCucharaTenedorRosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Vaita'
+  },
+  {
+    id: 'acc-vaita-cuchara-tenedor-verde',
+    name: 'Cuchara y Tenedor Plástico Vaita Verde',
+    description: 'Set de cuchara y tenedor de plástico Vaita para bebés.',
+    price: 3000,
+    category: 'accesorios',
+    subCategory: 'Vaita',
+    image: vaitaCucharaTenedorVerde,
     rating: 0,
     reviews: 0,
     stock: 10,
