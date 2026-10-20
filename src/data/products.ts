@@ -410,6 +410,12 @@ import aventChupeteX2_06Rosa from '../assets/images/Avent/Chupete_Avent_Ultra_Ai
 import aventChupeteX2_618Rosa from '../assets/images/Avent/Chupete_Avent_Ultra_Air_por_2_6-18m_Rosa.webp';
 // @ts-expect-error - image asset
 import aventChupeteX2_618Verde from '../assets/images/Avent/Chupete_Avent_Ultra_Air_por_2_6-18m_Verde.webp';
+// @ts-expect-error - image asset
+import aventTetinaClasicaX1_3mFlujo3 from '../assets/images/Avent/Tetina_Avent_Clasica_por_1_3m_Flujo_por_3.webp';
+// @ts-expect-error - image asset
+import aventTetinaClasicaX2_1mFlujo2 from '../assets/images/Avent/Tetina_Avent_Clasica_por_2_1m_Flujo_por_2.webp';
+// @ts-expect-error - image asset
+import aventTetinaNaturalX2Flujo2 from '../assets/images/Avent/Tetina_Avent_Natural_por_2_Flujo_por_2.webp';
 
 // Nuk
 // @ts-expect-error - image asset
@@ -3314,6 +3320,48 @@ export const PRODUCTS: Product[] = [
     category: 'accesorios',
     subCategory: 'Avent',
     image: aventChupeteX2_618Verde,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Avent'
+  },
+  {
+    id: 'acc-avent-tetina-clasica-1-3m-flujo3',
+    name: 'Tetina Avent Clásica por 1 3m+ Flujo por 3',
+    description: 'Tetina Avent Clásica, flujo 3, para bebés desde los 3 meses.',
+    price: 10000,
+    category: 'accesorios',
+    subCategory: 'Avent',
+    image: aventTetinaClasicaX1_3mFlujo3,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Avent'
+  },
+  {
+    id: 'acc-avent-tetina-clasica-2-1m-flujo2',
+    name: 'Tetina Avent Clásica por 2 1m+ Flujo por 2',
+    description: 'Pack de 2 tetinas Avent Clásica, flujo 2, para bebés desde el mes.',
+    price: 15000,
+    category: 'accesorios',
+    subCategory: 'Avent',
+    image: aventTetinaClasicaX2_1mFlujo2,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Avent'
+  },
+  {
+    id: 'acc-avent-tetina-natural-2-flujo2',
+    name: 'Tetina Avent Natural por 2 Flujo por 2',
+    description: 'Pack de 2 tetinas Avent Natural Response, flujo 2.',
+    price: 19000,
+    category: 'accesorios',
+    subCategory: 'Avent',
+    image: aventTetinaNaturalX2Flujo2,
     rating: 0,
     reviews: 0,
     stock: 10,
