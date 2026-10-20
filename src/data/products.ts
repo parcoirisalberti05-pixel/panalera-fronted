@@ -632,6 +632,40 @@ import dispitaVasoAntiderrameAzul from '../assets/images/Dispita/Vaso_antiderram
 import dispitaVasoAntiderrameRosa from '../assets/images/Dispita/Vaso_antiderrame_con_asas_Dispita_Rosa.webp';
 // @ts-expect-error - image asset
 import dispitaVasoAntiderrameVerde from '../assets/images/Dispita/Vaso_antiderrame_con_asas_Dispita_Verde.webp';
+// @ts-expect-error - image asset
+import dispitaAspiradorAzul from '../assets/images/Dispita/Aspirador_Nasal_Dispita_2_Valvulas_Azul.webp';
+// @ts-expect-error - image asset
+import dispitaAspiradorVerde from '../assets/images/Dispita/Aspirador_Nasal_Dispita_Verde.webp';
+// @ts-expect-error - image asset
+import dispitaChupeteAlimentadorAzul from '../assets/images/Dispita/Chupete_Alimentador_Dispita_Azul.webp';
+// @ts-expect-error - image asset
+import dispitaChupeteAlimentadorNaranja from '../assets/images/Dispita/Chupete_Alimentador_Dispita_Naranja.webp';
+// @ts-expect-error - image asset
+import dispitaCucharaMetalAzul from '../assets/images/Dispita/Cuchara_Metal_Dispita_Azul.webp';
+// @ts-expect-error - image asset
+import dispitaCucharaMetalRosa from '../assets/images/Dispita/Cuchara_Metal_Dispita_Rosa.webp';
+// @ts-expect-error - image asset
+import dispitaMordilloManoAzul from '../assets/images/Dispita/Mordillo_Mano_Dispita_Azul.webp';
+// @ts-expect-error - image asset
+import dispitaMordilloManoRosa from '../assets/images/Dispita/Mordillo_Mano_Dispita_Rosa.webp';
+// @ts-expect-error - image asset
+import dispitaMordilloOsoCeleste from '../assets/images/Dispita/Mordillo_Oso_Dispita_Celeste.webp';
+// @ts-expect-error - image asset
+import dispitaMordilloOsoRosa from '../assets/images/Dispita/Mordillo_Oso_Dispita_Rosa.webp';
+// @ts-expect-error - image asset
+import dispitaPlatoPlasticoRosa from '../assets/images/Dispita/Plato_Plastico_Dispita_Rosa.webp';
+// @ts-expect-error - image asset
+import dispitaPlatoTermicoAzul from '../assets/images/Dispita/Plato_Termico_Dispita_Azul.webp';
+// @ts-expect-error - image asset
+import dispitaPlatoTermicoRosa from '../assets/images/Dispita/Plato_Termico_Dispita_Rosa.webp';
+// @ts-expect-error - image asset
+import dispitaRalladorAmarillo from '../assets/images/Dispita/Rallador_para_Alimentos_Dispita_Amarillo_palido.webp';
+// @ts-expect-error - image asset
+import dispitaRalladorAzul from '../assets/images/Dispita/Rallador_para_Alimentos_Dispita_Azul.webp';
+// @ts-expect-error - image asset
+import dispitaRalladorRosa from '../assets/images/Dispita/Rallador_para_Alimentos_Dispita_Rosa.webp';
+// @ts-expect-error - image asset
+import dispitaSetSacaLeche from '../assets/images/Dispita/Set_Saca_Leche_Dispita.webp';
 
 // Vaita
 // @ts-expect-error - image asset
@@ -4788,6 +4822,244 @@ export const PRODUCTS: Product[] = [
     category: 'accesorios',
     subCategory: 'Dispita',
     image: dispitaVasoAntiderrameVerde,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-aspirador-azul',
+    name: 'Aspirador Nasal Dispita 2 Válvulas Azul art.10802',
+    description: 'Aspirador nasal Dispita con 2 válvulas.',
+    price: 6000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaAspiradorAzul,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-aspirador-verde',
+    name: 'Aspirador Nasal Dispita Verde art.10886',
+    description: 'Aspirador nasal Dispita.',
+    price: 7500,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaAspiradorVerde,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-chupete-alimentador-azul',
+    name: 'Chupete Alimentador Dispita Azul art.11150',
+    description: 'Chupete alimentador Dispita.',
+    price: 9500,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaChupeteAlimentadorAzul,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-chupete-alimentador-naranja',
+    name: 'Chupete Alimentador Dispita Naranja art.11150',
+    description: 'Chupete alimentador Dispita.',
+    price: 9500,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaChupeteAlimentadorNaranja,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-cuchara-metal-azul',
+    name: 'Cuchara Metal Dispita Azul art.10605',
+    description: 'Cuchara de metal Dispita.',
+    price: 4000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaCucharaMetalAzul,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-cuchara-metal-rosa',
+    name: 'Cuchara Metal Dispita Rosa art.10605',
+    description: 'Cuchara de metal Dispita.',
+    price: 4000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaCucharaMetalRosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-mordillo-mano-azul',
+    name: 'Mordillo Mano Dispita Azul art.10833',
+    description: 'Mordillo en forma de mano Dispita.',
+    price: 4000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaMordilloManoAzul,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-mordillo-mano-rosa',
+    name: 'Mordillo Mano Dispita Rosa art.10833',
+    description: 'Mordillo en forma de mano Dispita.',
+    price: 4000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaMordilloManoRosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-mordillo-oso-celeste',
+    name: 'Mordillo Oso Dispita Celeste art.10834',
+    description: 'Mordillo en forma de oso Dispita.',
+    price: 4000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaMordilloOsoCeleste,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-mordillo-oso-rosa',
+    name: 'Mordillo Oso Dispita Rosa art.10834',
+    description: 'Mordillo en forma de oso Dispita.',
+    price: 4000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaMordilloOsoRosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-plato-plastico-rosa',
+    name: 'Plato Plástico Dispita Rosa art.10609',
+    description: 'Plato plástico Dispita.',
+    price: 6000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaPlatoPlasticoRosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-plato-termico-azul',
+    name: 'Plato Térmico Dispita Azul art.10670',
+    description: 'Plato térmico Dispita.',
+    price: 17500,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaPlatoTermicoAzul,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-plato-termico-rosa',
+    name: 'Plato Térmico Dispita Rosa art.10670',
+    description: 'Plato térmico Dispita.',
+    price: 17500,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaPlatoTermicoRosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-rallador-amarillo',
+    name: 'Rallador para Alimentos Dispita Amarillo Pálido',
+    description: 'Rallador para alimentos Dispita.',
+    price: 5000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaRalladorAmarillo,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-rallador-azul',
+    name: 'Rallador para Alimentos Dispita Azul art.10616',
+    description: 'Rallador para alimentos Dispita.',
+    price: 5000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaRalladorAzul,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-rallador-rosa',
+    name: 'Rallador para Alimentos Dispita Rosa art.10616',
+    description: 'Rallador para alimentos Dispita.',
+    price: 5000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaRalladorRosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Dispita'
+  },
+  {
+    id: 'acc-dispita-set-saca-leche',
+    name: 'Set Saca Leche Dispita',
+    description: 'Set saca leche Dispita.',
+    price: 33000,
+    category: 'accesorios',
+    subCategory: 'Dispita',
+    image: dispitaSetSacaLeche,
     rating: 0,
     reviews: 0,
     stock: 10,
