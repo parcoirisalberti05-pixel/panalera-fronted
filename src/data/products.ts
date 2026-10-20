@@ -389,18 +389,6 @@ import nidina2_800g from '../assets/images/Otros/Nidina 2 800gr.webp';
 
 // Avent
 // @ts-expect-error - image asset
-import chupeteAvent1_06n from '../assets/images/Avent/Chupete_Avent_por_1 0-6 nena.jpeg';
-// @ts-expect-error - image asset
-import chupeteAvent1_618 from '../assets/images/Avent/Chupete_Avent_por_1_6-18.jpeg';
-// @ts-expect-error - image asset
-import chupeteAvent2_06v from '../assets/images/Avent/Chupete_Avent_por_2_0-6 varon.jpeg';
-// @ts-expect-error - image asset
-import chupeteAvent2_06 from '../assets/images/Avent/Chupete_Avent_por_2_0-6.jpeg';
-// @ts-expect-error - image asset
-import chupeteAvent2_618n from '../assets/images/Avent/Chupete_Avent_por_2_6-18 nena.jpeg';
-// @ts-expect-error - image asset
-import chupeteAvent2_618 from '../assets/images/Avent/Chupete_Avent_por_2_6-18.jpeg';
-// @ts-expect-error - image asset
 import mamaderaAventClasica125 from '../assets/images/Avent/Mamadera_Avent_Clasica_125ml.webp';
 // @ts-expect-error - image asset
 import mamaderaAventClasica260 from '../assets/images/Avent/Mamadera_Avent_Clasica_260ml.webp';
@@ -3168,91 +3156,7 @@ export const PRODUCTS: Product[] = [
 
   // --- ACCESORIOS ---
   // Avent
-  {
-    id: 'acc-avent-chupete-1-06n',
-    name: 'Chupete Avent Ultra Air x1 0-6m Nena',
-    description: 'Chupete Avent Ultra Air diseñado para dejar respirar la piel del bebé, con 4 orificios de aireación extragrandes y tetina suave. Talle 0-6 meses.',
-    price: 15000,
-    category: 'accesorios',
-    subCategory: 'Avent',
-    image: chupeteAvent1_06n,
-    rating: 4.8,
-    reviews: 24,
-    stock: 15,
-    featured: true,
-    brand: 'Avent'
-  },
-  {
-    id: 'acc-avent-chupete-1-618',
-    name: 'Chupete Avent Ultra Air x1 6-18m Unisex',
-    description: 'Chupete Avent Ultra Air talle 2 para bebés de 6 a 18 meses, con tetina ortodóntica de silicona y práctico estuche de esterilización.',
-    price: 15000,
-    category: 'accesorios',
-    subCategory: 'Avent',
-    image: chupeteAvent1_618,
-    rating: 4.7,
-    reviews: 14,
-    stock: 18,
-    featured: false,
-    brand: 'Avent'
-  },
-  {
-    id: 'acc-avent-chupete-2-06v',
-    name: 'Chupete Avent Ultra Air x2 0-6m Varón',
-    description: 'Pack de 2 chupetes Avent Ultra Air con diseños modernos para varón. Tetina de silicona ultrasuave para el correcto desarrollo bucal.',
-    price: 28000,
-    category: 'accesorios',
-    subCategory: 'Avent',
-    image: chupeteAvent2_06v,
-    rating: 4.9,
-    reviews: 19,
-    stock: 12,
-    featured: false,
-    brand: 'Avent'
-  },
-  {
-    id: 'acc-avent-chupete-2-06',
-    name: 'Chupete Avent Ultra Air x2 0-6m Unisex',
-    description: 'Pack de 2 chupetes Avent Ultra Air talle 0-6 meses en tonos unisex. Diseñado con escudo liviano y bordes redondeados.',
-    price: 28000,
-    category: 'accesorios',
-    subCategory: 'Avent',
-    image: chupeteAvent2_06,
-    rating: 4.8,
-    reviews: 21,
-    stock: 16,
-    featured: false,
-    brand: 'Avent'
-  },
-  {
-    id: 'acc-avent-chupete-2-618n',
-    name: 'Chupete Avent Ultra Air x2 6-18m Nena',
-    description: 'Pack de 2 chupetes Avent Ultra Air talle 6-18 meses con hermosos diseños de nena. Favorece la circulación del aire.',
-    price: 28000,
-    category: 'accesorios',
-    subCategory: 'Avent',
-    image: chupeteAvent2_618n,
-    rating: 4.8,
-    reviews: 15,
-    stock: 14,
-    featured: false,
-    brand: 'Avent'
-  },
-  {
-    id: 'acc-avent-chupete-2-618',
-    name: 'Chupete Avent Ultra Air x2 6-18m Unisex',
-    description: 'Pack de 2 chupetes Avent Ultra Air talle 6-18 meses en colores neutros. Calma al bebé con total comodidad.',
-    price: 28000,
-    category: 'accesorios',
-    subCategory: 'Avent',
-    image: chupeteAvent2_618,
-    rating: 4.7,
-    reviews: 11,
-    stock: 15,
-    featured: false,
-    brand: 'Avent'
-  },
-  {
+    {
     id: 'acc-avent-mamadera-clasica125',
     name: 'Mamadera Avent Clásica Plus 125ml',
     description: 'Mamadera Avent Clásica Plus de 125ml (4oz) con sistema anticólicos clínicamente probado para reducir cólicos y malestares.',
