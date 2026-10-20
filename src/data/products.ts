@@ -235,8 +235,6 @@ import toallitaHuggies4en1_48 from '../assets/images/Toallita-Humeda/Toallita Hu
 // @ts-expect-error - image asset
 import toallitaHuggiesOleo48 from '../assets/images/Toallita-Humeda/Toallita Humeda Huggies con oleo por 48.webp';
 // @ts-expect-error - image asset
-import toallitaHuggiesOleo80 from '../assets/images/Toallita-Humeda/Toallita Humeda Huggies con oleo por 80.webp';
-// @ts-expect-error - image asset
 import toallitaHuggiesDiaria112 from '../assets/images/Toallita-Humeda/Toallita Humeda Huggies limpieza diaria por 112.webp';
 // @ts-expect-error - image asset
 import toallitaHuggiesDiaria80 from '../assets/images/Toallita-Humeda/Toallita Humeda Huggies limpieza diaria por 80.webp';
@@ -426,8 +424,6 @@ import mamaderaNukNena300 from '../assets/images/Nuk/Mamadera_Nuk_nena_300ml.web
 import mamaderaNukUnisex150 from '../assets/images/Nuk/Mamadera_Nuk_unisex_150ml.webp';
 // @ts-expect-error - image asset
 import mamaderaNukVaron150 from '../assets/images/Nuk/Mamadera_Nuk_varon_150ml.webp';
-// @ts-expect-error - image asset
-import mamaderaNukVaron300 from '../assets/images/Nuk/Mamadera_Nuk_varon_300ml.webp';
 // @ts-expect-error - image asset
 import tetinaNuk618m from '../assets/images/Nuk/Tetina_Nuk_6-18m.webp';
 // @ts-expect-error - image asset
@@ -1795,21 +1791,7 @@ export const PRODUCTS: Product[] = [
     stock: 100,
     featured: true
   },
-  {
-    id: 'hig-toallitas-huggies-oleo-80',
-    name: 'Toallitas Húmedas Huggies con Óleo Calcáreo (80 u.)',
-    description: 'Envase familiar con tapa dosificadora que contiene óleo calcáreo, ideal para una colita limpia y protegida por más tiempo.',
-    price: 14300,
-    category: 'higiene',
-    subCategory: 'Toallitas Humedas',
-    brand: 'Huggies',
-    image: toallitaHuggiesOleo80,
-    rating: 4.9,
-    reviews: 142,
-    stock: 120,
-    featured: true
-  },
-  {
+    {
     id: 'hig-toallitas-huggies-diaria-112',
     name: 'Toallitas Húmedas Huggies Limpieza Diaria (112 u.)',
     description: 'Súper pack ahorro de 112 toallitas para un uso diario prolongado con toda la suavidad y calidad de Huggies.',
@@ -3420,20 +3402,6 @@ export const PRODUCTS: Product[] = [
     reviews: 28,
     stock: 14,
     featured: true,
-    brand: 'Nuk'
-  },
-  {
-    id: 'acc-nuk-mamadera-varon-300',
-    name: 'Mamadera Nuk First Choice+ Varón 300ml',
-    description: 'Mamadera de 300ml Nuk con indicador de temperatura seguro para la preparación de mamaderas. Motivos divertidos para varón.',
-    price: 19000,
-    category: 'accesorios',
-    subCategory: 'Nuk',
-    image: mamaderaNukVaron300,
-    rating: 4.8,
-    reviews: 24,
-    stock: 15,
-    featured: false,
     brand: 'Nuk'
   },
   {
