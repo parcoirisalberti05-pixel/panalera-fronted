@@ -400,6 +400,16 @@ import mamaderaAventNatural125 from '../assets/images/Avent/Mamadera_Avent_Natur
 import mamaderaAventNatural260 from '../assets/images/Avent/Mamadera_Avent_Natural_260ml.webp';
 // @ts-expect-error - image asset
 import mamaderaAventNatural330 from '../assets/images/Avent/Mamadera_Avent_Natural_330ml.webp';
+// @ts-expect-error - image asset
+import aventChupeteX1_618Rosa from '../assets/images/Avent/Chupete_Avent_Ultra_Air_por_1_6-18m_Rosa.webp';
+// @ts-expect-error - image asset
+import aventChupeteX2_06Celeste from '../assets/images/Avent/Chupete_Avent_Ultra_Air_por_2_0-6m_Celeste.webp';
+// @ts-expect-error - image asset
+import aventChupeteX2_06Rosa from '../assets/images/Avent/Chupete_Avent_Ultra_Air_por_2_0-6m_Rosa.webp';
+// @ts-expect-error - image asset
+import aventChupeteX2_618Rosa from '../assets/images/Avent/Chupete_Avent_Ultra_Air_por_2_6-18m_Rosa.webp';
+// @ts-expect-error - image asset
+import aventChupeteX2_618Verde from '../assets/images/Avent/Chupete_Avent_Ultra_Air_por_2_6-18m_Verde.webp';
 
 // Nuk
 // @ts-expect-error - image asset
@@ -3237,6 +3247,76 @@ export const PRODUCTS: Product[] = [
     rating: 4.9,
     reviews: 29,
     stock: 15,
+    featured: false,
+    brand: 'Avent'
+  },
+  {
+    id: 'acc-avent-chupete-1-618-rosa',
+    name: 'Chupete Avent Ultra Air por 1 6-18m Rosa',
+    description: 'Chupete Avent Ultra Air para bebés de 6 a 18 meses.',
+    price: 15000,
+    category: 'accesorios',
+    subCategory: 'Avent',
+    image: aventChupeteX1_618Rosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Avent'
+  },
+  {
+    id: 'acc-avent-chupete-2-06-celeste',
+    name: 'Chupete Avent Ultra Air por 2 0-6m Celeste',
+    description: 'Pack de 2 chupetes Avent Ultra Air para bebés de 0 a 6 meses.',
+    price: 28000,
+    category: 'accesorios',
+    subCategory: 'Avent',
+    image: aventChupeteX2_06Celeste,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Avent'
+  },
+  {
+    id: 'acc-avent-chupete-2-06-rosa',
+    name: 'Chupete Avent Ultra Air por 2 0-6m Rosa',
+    description: 'Pack de 2 chupetes Avent Ultra Air para bebés de 0 a 6 meses.',
+    price: 28000,
+    category: 'accesorios',
+    subCategory: 'Avent',
+    image: aventChupeteX2_06Rosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Avent'
+  },
+  {
+    id: 'acc-avent-chupete-2-618-rosa',
+    name: 'Chupete Avent Ultra Air por 2 6-18m Rosa',
+    description: 'Pack de 2 chupetes Avent Ultra Air para bebés de 6 a 18 meses.',
+    price: 28000,
+    category: 'accesorios',
+    subCategory: 'Avent',
+    image: aventChupeteX2_618Rosa,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
+    featured: false,
+    brand: 'Avent'
+  },
+  {
+    id: 'acc-avent-chupete-2-618-verde',
+    name: 'Chupete Avent Ultra Air por 2 6-18m Verde',
+    description: 'Pack de 2 chupetes Avent Ultra Air para bebés de 6 a 18 meses.',
+    price: 28000,
+    category: 'accesorios',
+    subCategory: 'Avent',
+    image: aventChupeteX2_618Verde,
+    rating: 0,
+    reviews: 0,
+    stock: 10,
     featured: false,
     brand: 'Avent'
   },
