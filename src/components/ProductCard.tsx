@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, ShoppingCart, Info, Package } from 'lucide-react';
+import { ShoppingCart, Info, Package } from 'lucide-react';
 import { Product } from '../types';
 
 interface ProductCardProps {
@@ -86,21 +86,14 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
 
       {/* Product Details */}
       <div className="p-5 flex flex-col flex-1">
-        {/* Rating, Reviews and Subcategory */}
-        <div className="flex items-center justify-between gap-2 mb-2">
-          <div className="flex items-center gap-1">
-            <div className="flex items-center text-amber-400">
-              <Star className="w-4 h-4 fill-amber-400" />
-              <span className="text-xs font-bold text-slate-700 ml-1">{product.rating}</span>
-            </div>
-            <span className="text-[11px] text-slate-400">({product.reviews})</span>
-          </div>
-          {product.subCategory && (
+        {/* Subcategory */}
+        {product.subCategory && (
+          <div className="flex items-center justify-end mb-2">
             <span className="text-[10px] font-black text-rose-500 uppercase tracking-widest bg-rose-50 border border-rose-100 px-2 py-0.5 rounded-lg select-none">
               {product.subCategory === 'Toallitas Humedas' ? 'Toallitas Húmedas' : product.subCategory === 'Oleo' ? 'Óleo' : product.subCategory === 'Jabon' ? 'Jabón' : product.subCategory}
             </span>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Name and Description */}
         <h3 className="text-sm md:text-base font-bold text-slate-800 line-clamp-2 group-hover:text-rose-500 transition-colors duration-200">
