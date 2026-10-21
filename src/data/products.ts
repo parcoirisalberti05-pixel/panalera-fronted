@@ -745,7 +745,7 @@ export const PRODUCTS: Product[] = [
   // --- PAÑALES ---
   {
     id: 'panal-pamper-babydry-rn',
-    name: 'Pañales Pampers Baby Dry Recién Nacido RN+ (36 u.)',
+    name: 'Pampers Baby Dry Recién Nacido RN+ (36 u.)',
     description: 'Pañales Pampers Baby Dry con canales de aire para una colita seca y aireada durante la noche. Máxima absorción para cuidar a tu recién nacido.',
     price: 16800,
     category: 'pañales',
@@ -758,7 +758,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-pamper-babydry-p',
-    name: 'Pañales Pampers Baby Dry Talle P (56 u.)',
+    name: 'Pampers Baby Dry Talle P (56 u.)',
     description: 'Hasta 12 horas sequito con barreras reforzadas contra derrames y cintas reajustables para el mejor calce y comodidad de tu bebé.',
     price: 22000,
     category: 'pañales',
@@ -771,7 +771,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-pamper-babydry-m',
-    name: 'Pañales Pampers Baby Dry Talle M (72 u.)',
+    name: 'Pampers Baby Dry Talle M (72 u.)',
     description: 'Máxima comodidad y absorción superior día y noche. Con canales de aire que evitan el contacto de la humedad con la piel del bebé.',
     price: 30500,
     category: 'pañales',
@@ -784,7 +784,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-pamper-babydry-g',
-    name: 'Pañales Pampers Baby Dry Talle G (72 u.)',
+    name: 'Pampers Baby Dry Talle G (72 u.)',
     description: 'Brinda un calce anatómico ideal y cintas ultra resistentes para acompañar todos los movimientos de tu bebé activo manteniéndolo seco.',
     price: 30500,
     category: 'pañales',
@@ -797,7 +797,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-pamper-babydry-xg',
-    name: 'Pañales Pampers Baby Dry Talle XG (58 u.)',
+    name: 'Pampers Baby Dry Talle XG (58 u.)',
     description: 'Protección reforzada contra filtraciones con gel súper absorbente y barreras elásticas que se adaptan con suavidad.',
     price: 30500,
     category: 'pañales',
@@ -810,7 +810,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-pamper-babydry-xxg',
-    name: 'Pañales Pampers Baby Dry Talle XXG (54 u.)',
+    name: 'Pampers Baby Dry Talle XXG (54 u.)',
     description: 'La máxima absorción y sequedad duradera para bebés grandes y activos. Ideal para una protección total durante toda la noche.',
     price: 30500,
     category: 'pañales',
@@ -823,7 +823,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-pamper-babydry-xxxg',
-    name: 'Pañales Pampers Baby Dry Talle XXXG (44 u.)',
+    name: 'Pampers Baby Dry Talle XXXG (44 u.)',
     description: 'Talle extra grande diseñado para asegurar la máxima comodidad, ajuste flexible y absorción continua en la etapa de crecimiento de tu bebé.',
     price: 30500,
     category: 'pañales',
@@ -836,7 +836,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-pamper-deluxe-m',
-    name: 'Pañales Pampers Deluxe Talle M (72 u.)',
+    name: 'Pampers Deluxe Talle M (72 u.)',
     description: 'La máxima suavidad y protección premium de Pampers Deluxe para mantener a tu bebé seco y cómodo.',
     price: 37000,
     category: 'pañales',
@@ -849,7 +849,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-pamper-deluxe-g',
-    name: 'Pañales Pampers Deluxe Talle G (72 u.)',
+    name: 'Pampers Deluxe Talle G (72 u.)',
     description: 'Ajuste elástico anatómico superior y absorción insuperable para acompañar los movimientos de tu bebé activo.',
     price: 37000,
     category: 'pañales',
@@ -862,7 +862,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-pamper-deluxe-xg',
-    name: 'Pañales Pampers Deluxe Talle XG (58 u.)',
+    name: 'Pampers Deluxe Talle XG (58 u.)',
     description: 'Barreras reforzadas contra filtraciones y suavidad premium incomparable para la piel de tu bebé.',
     price: 37000,
     category: 'pañales',
@@ -875,7 +875,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-pamper-deluxe-xxg',
-    name: 'Pañales Pampers Deluxe Talle XXG (54 u.)',
+    name: 'Pampers Deluxe Talle XXG (54 u.)',
     description: 'La protección más avanzada y sequedad prolongada por hasta 12 horas para bebés grandes y activos.',
     price: 37000,
     category: 'pañales',
@@ -888,7 +888,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-classic-p',
-    name: 'Pañales Huggies Clásico Talle P (50 u.)',
+    name: 'Huggies Clásico Talle P (50 u.)',
     description: 'Pañales Huggies Clásico con tecnología de absorción confiable y barreras antifiltros para mantener a tu bebé cómodo y sequito.',
     price: 9000,
     category: 'pañales',
@@ -901,7 +901,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-classic-m',
-    name: 'Pañales Huggies Clásico Talle M (68 u.)',
+    name: 'Huggies Clásico Talle M (68 u.)',
     description: 'Protección confiable día y noche con cintas regulables y diseño anatómico para un calce perfecto y seguro para tu bebé.',
     price: 20000,
     category: 'pañales',
@@ -914,7 +914,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-classic-g',
-    name: 'Pañales Huggies Clásico Talle G (60 u.)',
+    name: 'Huggies Clásico Talle G (60 u.)',
     description: 'Excelente absorción y cuidado para la colita de tu bebé, con barreras reforzadas que evitan filtraciones durante sus movimientos.',
     price: 20000,
     category: 'pañales',
@@ -927,7 +927,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-classic-xg',
-    name: 'Pañales Huggies Clásico Talle XG (56 u.)',
+    name: 'Huggies Clásico Talle XG (56 u.)',
     description: 'Diseñados con barreras elásticas y gel súper absorbente para bebés activos que necesitan máxima libertad de movimiento y sequedad.',
     price: 20000,
     category: 'pañales',
@@ -940,7 +940,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-classic-xxg',
-    name: 'Pañales Huggies Clásico Talle XXG (54 u.)',
+    name: 'Huggies Clásico Talle XXG (54 u.)',
     description: 'La protección clásica de Huggies que ya conocés, ahora con cintas elásticas más resistentes y absorción de larga duración.',
     price: 20000,
     category: 'pañales',
@@ -953,7 +953,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-classic-xxxg',
-    name: 'Pañales Huggies Clásico Talle XXXG (52 u.)',
+    name: 'Huggies Clásico Talle XXXG (52 u.)',
     description: 'Talle extra grande diseñado para la máxima comodidad y absorción adaptada para acompañar el crecimiento de tu bebé.',
     price: 20000,
     category: 'pañales',
@@ -966,7 +966,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-flexi-rn',
-    name: 'Pañales Huggies Flexi Confort Talle RN (34 u.)',
+    name: 'Huggies Flexi Confort Talle RN (34 u.)',
     description: 'Protección y suavidad superior para tu recién nacido, con ajuste flexible que se adapta delicadamente a su cuerpo.',
     price: 15800,
     category: 'pañales',
@@ -979,7 +979,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-flexi-p',
-    name: 'Pañales Huggies Flexi Confort Talle P (50 u.)',
+    name: 'Huggies Flexi Confort Talle P (50 u.)',
     description: 'Con canales de absorción y cintas elásticas regulables que brindan la máxima comodidad y libertad de movimiento.',
     price: 20500,
     category: 'pañales',
@@ -992,7 +992,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-flexi-m',
-    name: 'Pañales Huggies Flexi Confort Talle M (68 u.)',
+    name: 'Huggies Flexi Confort Talle M (68 u.)',
     description: 'Ajuste perfecto de 360 grados y absorción confiable día y noche para acompañar las aventuras de tu bebé.',
     price: 25500,
     category: 'pañales',
@@ -1005,7 +1005,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-flexi-g',
-    name: 'Pañales Huggies Flexi Confort Talle G (60 u.)',
+    name: 'Huggies Flexi Confort Talle G (60 u.)',
     description: 'Máxima flexibilidad y cuidado de la colita del bebé. Con barreras anti-filtración reforzadas y tecnología absorbente.',
     price: 25500,
     category: 'pañales',
@@ -1018,7 +1018,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-flexi-xg',
-    name: 'Pañales Huggies Flexi Confort Talle XG (52 u.)',
+    name: 'Huggies Flexi Confort Talle XG (52 u.)',
     description: 'Diseño anatómico ultra cómodo y cintura elástica que se estira y adapta a los movimientos más activos de tu bebé.',
     price: 25500,
     category: 'pañales',
@@ -1031,7 +1031,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-flexi-xxg',
-    name: 'Pañales Huggies Flexi Confort Talle XXG (50 u.)',
+    name: 'Huggies Flexi Confort Talle XXG (50 u.)',
     description: 'Protección total de larga duración con suavidad premium y ajuste flexible para la etapa más activa de tu bebé.',
     price: 25500,
     category: 'pañales',
@@ -1044,7 +1044,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-flexi-xxxg',
-    name: 'Pañales Huggies Flexi Confort Talle XXXG (48 u.)',
+    name: 'Huggies Flexi Confort Talle XXXG (48 u.)',
     description: 'Talle extra extra grande con ajuste óptimo y absorción continua para mantener seco y cómodo a tu bebé durante más tiempo.',
     price: 25500,
     category: 'pañales',
@@ -1057,7 +1057,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-natural-rn',
-    name: 'Pañales Huggies Natural Care Talle RN (34 u.)',
+    name: 'Huggies Natural Care Talle RN (34 u.)',
     description: 'Cuidado puro y natural para tu recién nacido. Con fibras naturales, máxima suavidad y cuidado delicado para la piel más sensible.',
     price: 19000,
     category: 'pañales',
@@ -1070,7 +1070,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-natural-p',
-    name: 'Pañales Huggies Natural Care Talle P (50 u.)',
+    name: 'Huggies Natural Care Talle P (50 u.)',
     description: 'Protección premium con materiales de origen natural y respirables que mantienen la piel de tu bebé sana, seca y protegida.',
     price: 23000,
     category: 'pañales',
@@ -1083,7 +1083,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-natural-m',
-    name: 'Pañales Huggies Natural Care Talle M (68 u.)',
+    name: 'Huggies Natural Care Talle M (68 u.)',
     description: 'Ajuste sumamente suave y delicado con tecnología de absorción superior y canales respirables para la máxima comodidad diurna y nocturna.',
     price: 29000,
     category: 'pañales',
@@ -1096,7 +1096,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-natural-g',
-    name: 'Pañales Huggies Natural Care Talle G (60 u.)',
+    name: 'Huggies Natural Care Talle G (60 u.)',
     description: 'Hipoalergénicos y dermatológicamente testeados, garantizan la máxima absorción y cuidado natural para la colita de tu bebé.',
     price: 29000,
     category: 'pañales',
@@ -1109,7 +1109,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-natural-xg',
-    name: 'Pañales Huggies Natural Care Talle XG (52 u.)',
+    name: 'Huggies Natural Care Talle XG (52 u.)',
     description: 'Diseñados con cintura elástica ultra suave y barreras reforzadas para acompañar el movimiento de tu bebé con total frescura y protección.',
     price: 29000,
     category: 'pañales',
@@ -1122,7 +1122,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-natural-xxg',
-    name: 'Pañales Huggies Natural Care Talle XXG (50 u.)',
+    name: 'Huggies Natural Care Talle XXG (50 u.)',
     description: 'Protección premium prolongada con fibras naturales ultra suaves y absorción respirable de larga duración para bebés muy activos.',
     price: 29000,
     category: 'pañales',
@@ -1135,7 +1135,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-huggies-natural-xxxg',
-    name: 'Pañales Huggies Natural Care Talle XXXG (48 u.)',
+    name: 'Huggies Natural Care Talle XXXG (48 u.)',
     description: 'La máxima protección natural de Huggies en talle extra grande, brindando suavidad de algodón y sequedad insuperable para tu bebé.',
     price: 29000,
     category: 'pañales',
@@ -1148,7 +1148,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-rn',
-    name: 'Pañales Babysec Ultra Soft Recién Nacido (RN)',
+    name: 'Babysec Ultra Soft Recién Nacido (RN)',
     description: 'Protección suave y delicada para los primeros días de tu bebé. Con indicador de humedad y orejas elásticas.',
     price: 10000,
     category: 'pañales',
@@ -1161,7 +1161,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-p',
-    name: 'Pañales Babysec Ultra Soft Talle P',
+    name: 'Babysec Ultra Soft Talle P',
     description: 'Hasta 12 horas de absorción con cubierta tipo tela ultra suave para mantener seca la colita de tu bebé.',
     price: 11800,
     category: 'pañales',
@@ -1174,7 +1174,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-m',
-    name: 'Pañales Babysec Ultra Soft Talle M (48 u.)',
+    name: 'Babysec Ultra Soft Talle M (48 u.)',
     description: 'Pañales ultra suaves con divertidos diseños, ajuste anatómico y sistema súper absorbente para el día y la noche.',
     price: 9000,
     category: 'pañales',
@@ -1187,7 +1187,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-g',
-    name: 'Pañales Babysec Ultra Soft Talle G (40 u.)',
+    name: 'Babysec Ultra Soft Talle G (40 u.)',
     description: 'Brindan la mejor comodidad y absorción para tu bebé. Con cintura elástica que se adapta a todos sus movimientos.',
     price: 9000,
     category: 'pañales',
@@ -1200,7 +1200,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-xg',
-    name: 'Pañales Babysec Ultra Soft Talle XG (32 u.)',
+    name: 'Babysec Ultra Soft Talle XG (32 u.)',
     description: 'Barreras reforzadas contra derrames y diseño anatómico para un ajuste perfecto y cómodo.',
     price: 9000,
     category: 'pañales',
@@ -1213,7 +1213,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-xxg',
-    name: 'Pañales Babysec Ultra Soft Talle XXG (30 u.)',
+    name: 'Babysec Ultra Soft Talle XXG (30 u.)',
     description: 'El tamaño más grande para la mayor comodidad. Ajuste flexible y máxima absorción para bebés activos.',
     price: 9000,
     category: 'pañales',
@@ -1226,7 +1226,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-super-m',
-    name: 'Pañales Babysec Ultra Soft Super Pack M (68 u.)',
+    name: 'Babysec Ultra Soft Super Pack M (68 u.)',
     description: 'Máxima absorción y comodidad en su presentación Super Pack de 68 unidades. Cubierta súper suave y orejas elásticas.',
     price: 16800,
     category: 'pañales',
@@ -1239,7 +1239,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-super-g',
-    name: 'Pañales Babysec Ultra Soft Super Pack G (60 u.)',
+    name: 'Babysec Ultra Soft Super Pack G (60 u.)',
     description: 'La mejor protección para tu bebé en presentación Super Pack de 60 unidades. Cintura elástica ultra ajustable y absorción superior.',
     price: 16800,
     category: 'pañales',
@@ -1252,7 +1252,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-super-xg',
-    name: 'Pañales Babysec Ultra Soft Super Pack XG (52 u.)',
+    name: 'Babysec Ultra Soft Super Pack XG (52 u.)',
     description: 'Super Pack de 52 unidades con barreras reforzadas contra derrames y diseño anatómico para un ajuste cómodo y seguro.',
     price: 16800,
     category: 'pañales',
@@ -1265,7 +1265,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-super-xxg',
-    name: 'Pañales Babysec Ultra Soft Super Pack XXG (50 u.)',
+    name: 'Babysec Ultra Soft Super Pack XXG (50 u.)',
     description: 'El tamaño más grande en su presentación Super Pack de 50 unidades. Brinda un ajuste súper flexible y la máxima absorción.',
     price: 16800,
     category: 'pañales',
@@ -1278,7 +1278,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-premium-p',
-    name: 'Pañales Babysec Premium Soft Talle P (50 u.)',
+    name: 'Babysec Premium Soft Talle P (50 u.)',
     description: 'Pañales premium con máxima suavidad y cuidado para la delicada piel de tu bebé. Brinda hasta 12 horas de absorción con la máxima comodidad.',
     price: 13500,
     category: 'pañales',
@@ -1291,7 +1291,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-premium-m',
-    name: 'Pañales Babysec Premium Soft Talle M (48 u.)',
+    name: 'Babysec Premium Soft Talle M (48 u.)',
     description: 'La combinación perfecta de ultra suavidad, comodidad y absorción insuperable para proteger a tu bebé en todo momento con calidad premium.',
     price: 13500,
     category: 'pañales',
@@ -1304,7 +1304,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-premium-g',
-    name: 'Pañales Babysec Premium Soft Talle G (40 u.)',
+    name: 'Babysec Premium Soft Talle G (40 u.)',
     description: 'Brinda un cuidado superior y la máxima suavidad con cintura elástica premium que se adapta delicadamente a todos sus movimientos.',
     price: 13500,
     category: 'pañales',
@@ -1317,7 +1317,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-premium-xg',
-    name: 'Pañales Babysec Premium Soft Talle XG (32 u.)',
+    name: 'Babysec Premium Soft Talle XG (32 u.)',
     description: 'Pañales extra suaves premium con barreras reforzadas antiderrames y diseño anatómico ultra adaptable para libre movimiento.',
     price: 13500,
     category: 'pañales',
@@ -1330,7 +1330,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-premium-xxg',
-    name: 'Pañales Babysec Premium Soft Talle XXG (30 u.)',
+    name: 'Babysec Premium Soft Talle XXG (30 u.)',
     description: 'El tamaño más grande con la protección premium más completa del mercado. Brinda un ajuste súper flexible y sequedad prolongada.',
     price: 13500,
     category: 'pañales',
@@ -1343,7 +1343,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-premium-super-g',
-    name: 'Pañales Babysec Premium Soft Super Pack Talle G (60 u.)',
+    name: 'Babysec Premium Soft Super Pack Talle G (60 u.)',
     description: 'Cuidado delicado de nivel superior y máxima suavidad en su presentación Super Pack de 60 unidades. Cintura elástica premium que se adapta a todos sus movimientos.',
     price: 18800,
     category: 'pañales',
@@ -1356,7 +1356,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-premium-super-xg',
-    name: 'Pañales Babysec Premium Soft Super Pack Talle XG (48 u.)',
+    name: 'Babysec Premium Soft Super Pack Talle XG (48 u.)',
     description: 'Pañales extra suaves premium en su presentación Super Pack de 48 unidades. Con barreras reforzadas antiderrames y diseño anatómico ultra adaptable.',
     price: 18800,
     category: 'pañales',
@@ -1369,7 +1369,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-babysec-premium-super-xxg',
-    name: 'Pañales Babysec Premium Soft Super Pack Talle XXG (42 u.)',
+    name: 'Babysec Premium Soft Super Pack Talle XXG (42 u.)',
     description: 'El tamaño más grande con la protección premium más completa en presentación Super Pack de 42 unidades. Ajuste súper flexible y sequedad prolongada.',
     price: 18800,
     category: 'pañales',
@@ -1382,7 +1382,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-hiper-p',
-    name: 'Pañales Estrella Baby Hiperpack Talle P (30 u.)',
+    name: 'Estrella Baby Hiperpack Talle P (30 u.)',
     description: 'Pañales Estrella Baby con tecnología de absorción reforzada, cubierta suave y cintas ajustables para mayor comodidad.',
     price: 10500,
     category: 'pañales',
@@ -1395,7 +1395,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-hiper-m',
-    name: 'Pañales Estrella Baby Hiperpack Talle M (44 u.)',
+    name: 'Estrella Baby Hiperpack Talle M (44 u.)',
     description: 'Pañales con absorción superior para mantener a tu bebé seco y cómodo tanto de día como de noche. Ajuste elástico confortable.',
     price: 14000,
     category: 'pañales',
@@ -1408,7 +1408,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-hiper-g',
-    name: 'Pañales Estrella Baby Hiperpack Talle G (40 u.)',
+    name: 'Estrella Baby Hiperpack Talle G (40 u.)',
     description: 'Excelente absorción y cuidado delicado para la piel de tu bebé. Con barreras antiderrame reforzadas para evitar accidentes.',
     price: 14000,
     category: 'pañales',
@@ -1421,7 +1421,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-hiper-xg',
-    name: 'Pañales Estrella Baby Hiperpack Talle XG (36 u.)',
+    name: 'Estrella Baby Hiperpack Talle XG (36 u.)',
     description: 'Diseño anatómico extra adaptable y gel súper absorbente para bebés activos que exploran el mundo con total libertad.',
     price: 14000,
     category: 'pañales',
@@ -1434,7 +1434,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-hiper-xxg',
-    name: 'Pañales Estrella Baby Hiperpack Talle XXG (34 u.)',
+    name: 'Estrella Baby Hiperpack Talle XXG (34 u.)',
     description: 'El talle más grande para asegurar la protección de tu bebé por hasta 12 horas. Máxima comodidad y ajuste flexible.',
     price: 14000,
     category: 'pañales',
@@ -1447,7 +1447,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-hiper-j',
-    name: 'Pañales Estrella Baby Hiperpack Talle J (30 u.)',
+    name: 'Estrella Baby Hiperpack Talle J (30 u.)',
     description: 'Talle Juvenil (J) diseñado especialmente para brindar la máxima comodidad y absorción continua en la etapa de crecimiento de tu bebé.',
     price: 14000,
     category: 'pañales',
@@ -1460,7 +1460,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-super-g',
-    name: 'Pañales Estrella Baby Super Pack Talle G (60 u.)',
+    name: 'Estrella Baby Super Pack Talle G (60 u.)',
     description: 'Pañales Estrella Baby Super Pack con absorción superior y comodidad para el movimiento diario de tu bebé.',
     price: 21500,
     category: 'pañales',
@@ -1473,7 +1473,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-super-xg',
-    name: 'Pañales Estrella Baby Super Pack Talle XG (52 u.)',
+    name: 'Estrella Baby Super Pack Talle XG (52 u.)',
     description: 'Pañales Estrella Baby Super Pack con barreras reforzadas y ajuste flexible para bebés activos.',
     price: 21500,
     category: 'pañales',
@@ -1486,7 +1486,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-super-xxg',
-    name: 'Pañales Estrella Baby Super Pack Talle XXG (50 u.)',
+    name: 'Estrella Baby Super Pack Talle XXG (50 u.)',
     description: 'El talle más grande de la línea Estrella Baby Super Pack, brindando máxima protección y sequedad prolongada.',
     price: 21500,
     category: 'pañales',
@@ -1499,7 +1499,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-super-j',
-    name: 'Pañales Estrella Baby Super Pack Talle J (50 u.)',
+    name: 'Estrella Baby Super Pack Talle J (50 u.)',
     description: 'Talle Juvenil (J) diseñado especialmente para la etapa de crecimiento, ahora en presentación Super Pack de 50 unidades.',
     price: 21500,
     category: 'pañales',
@@ -1512,7 +1512,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-premium-p',
-    name: 'Pañales Estrella Baby Premium Talle P (30 u.)',
+    name: 'Estrella Baby Premium Talle P (30 u.)',
     description: 'Pañales Estrella Baby Premium con máxima suavidad, cubierta respirable y canales de absorción rápida para cuidar la piel de tu bebé.',
     price: 11500,
     category: 'pañales',
@@ -1525,7 +1525,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-premium-m',
-    name: 'Pañales Estrella Baby Premium Talle M (44 u.)',
+    name: 'Estrella Baby Premium Talle M (44 u.)',
     description: 'Calidad premium con tecnología de absorción superior para una sequedad de día y noche. Ajuste elástico confortable de 360 grados.',
     price: 16000,
     category: 'pañales',
@@ -1538,7 +1538,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-premium-g',
-    name: 'Pañales Estrella Baby Premium Talle G (40 u.)',
+    name: 'Estrella Baby Premium Talle G (40 u.)',
     description: 'Cuidado delicado de nivel superior para la piel del bebé. Orejas súper elásticas y barreras reforzadas contra desbordes.',
     price: 16000,
     category: 'pañales',
@@ -1551,7 +1551,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-premium-xg',
-    name: 'Pañales Estrella Baby Premium Talle XG (36 u.)',
+    name: 'Estrella Baby Premium Talle XG (36 u.)',
     description: 'Diseño ultra anatómico premium y gel súper absorbente para bebés activos que se mueven libremente manteniéndose secos.',
     price: 16000,
     category: 'pañales',
@@ -1564,7 +1564,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-premium-xxg',
-    name: 'Pañales Estrella Baby Premium Talle XXG (34 u.)',
+    name: 'Estrella Baby Premium Talle XXG (34 u.)',
     description: 'Máxima comodidad y protección de calidad premium durante 12 horas. Laterales elastizados que se adaptan con suavidad.',
     price: 16000,
     category: 'pañales',
@@ -1577,7 +1577,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'panal-estrella-premium-j',
-    name: 'Pañales Estrella Baby Premium Talle J (30 u.)',
+    name: 'Estrella Baby Premium Talle J (30 u.)',
     description: 'Talle Juvenil (J) en calidad Premium, desarrollado para el ajuste perfecto y absorción superior adaptada a su crecimiento.',
     price: 16000,
     category: 'pañales',
