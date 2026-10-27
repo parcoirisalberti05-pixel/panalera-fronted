@@ -1,34 +1,39 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import { Search, SlidersHorizontal, Sparkles, FilterX } from 'lucide-react';
-import { Product } from '../types';
-import { PRODUCTS as BASE_PRODUCTS } from '../data/products';
-import { CALZADO } from '../data/calzado';
-import ProductCard from './ProductCard';
-import ShoeCard from './ShoeCard';
-
-// Catálogo completo: productos generales + calzado (un producto por talle)
-const PRODUCTS: Product[] = [...BASE_PRODUCTS, ...CALZADO];
-
-interface ProductGridProps {
-  activeCategory: 'pañales' | 'higiene' | 'ropa' | 'calzado' | 'rodados' | 'alimentacion' | 'accesorios' | null;
-  onSelectCategory: (category: 'pañales' | 'higiene' | 'ropa' | 'calzado' | 'rodados' | 'alimentacion' | 'accesorios' | null) => void;
-  onAddToCart: (product: Product) => void;
-  searchQuery: string;
-  onSearchChange: (query: string) => void;
+{displayItems.map((item) =>
+            item.kind === 'group' ? (
+              // @ts-ignore
+              <ShoeCard
+                key={item.key}
+                variants={item.variants}
+                onAddToCart={onAddToCart}
+              />
+            ) : (
+              // @ts-ignore
+              <ProductCard
+                key={item.product.id}
+                product={item.product}
+                onAddToCart={onAddToCart}
+              />
+            )
+          )}
+        </div>
+      ) : (
+        <div className="py-16 text-center border-2 border-dashed border-rose-100 rounded-3xl flex flex-col items-center justify-center p-6 bg-white/50" id="empty-product-state">
+          <div className="w-16 h-16 rounded-2xl bg-rose-50 flex items-center justify-center text-rose-400 mb-4 shadow-sm">
+            <FilterX className="w-8 h-8" />
+          </div>
+          <h3 className="text-base font-bold text-slate-700">No encontramos productos</h3>
+          <p className="text-xs text-slate-400 mt-1 max-w-sm">
+            Intentá buscando con otras palabras o borrando los filtros activos de búsqueda.
+          </p>
+          <button
+            onClick={() => { setSearchQuery(''); onSelectCategory(null); }}
+            className="cursor-pointer mt-4 px-6 py-2.5 text-xs font-bold bg-rose-400 hover:bg-rose-500 text-white rounded-full shadow-md shadow-rose-200 transition-all"
+            id="clear-filters-btn"
+          >
+            Limpiar filtros
+          </button>
+        </div>
+      )}
+    </div>
+  );
 }
-
-// Datos reales que llegan del backend para cada id_web
-interface StockReal {
-  price: number;
-  stock: number;
-}
-
-// URL del backend local. Si en algún momento el backend corre en otra
-// dirección/puerto, solo hay que cambiar esta constante.
-const API_URL = 'https://panalera-backend-production.up.railway.app/api/productos-web';
-
-export default function ProductGrid({
-  activeCategory,
-  onSelectCategory,
-  onAddToCart,
-  searchQuery,
