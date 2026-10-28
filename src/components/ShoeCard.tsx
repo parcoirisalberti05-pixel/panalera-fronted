@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { ShoppingCart, Package } from 'lucide-react';
 import { Product } from '../types';
+import ShoeDetailModal from './ShoeDetailModal';
 
 interface ShoeCardProps {
   // Todos los talles de un mismo modelo y color (un Product por talle)
@@ -11,6 +13,7 @@ interface ShoeCardProps {
 
 export default function ShoeCard({ variants, onAddToCart }: ShoeCardProps) {
   const [selectedSize, setSelectedSize] = useState<number | null>(null);
+  const [isDetailOpen, setIsDetailOpen] = useState(false);
 
   const sorted = [...variants].sort((a, b) => (a.size ?? 0) - (b.size ?? 0));
   const first = sorted[0];
@@ -50,8 +53,12 @@ export default function ShoeCard({ variants, onAddToCart }: ShoeCardProps) {
       className="group bg-white border border-rose-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:border-rose-300 hover:shadow-rose-100/60 transition-all duration-300 flex flex-col h-full relative"
       id={`shoe-card-${first.modelKey}`}
     >
-      {/* Imagen */}
-      <div className="relative aspect-square overflow-hidden bg-rose-50/20 flex items-center justify-center">
+      {/* Imagen (al tocarla se abre el detalle) */}
+      <div
+        className="relative aspect-square overflow-hidden bg-rose-50/20 flex items-center justify-center cursor-pointer"
+        onClick={() => setIsDetailOpen(true)}
+        id={`shoe-image-${first.modelKey}`}
+      >
         {first.image ? (
           <img
             src={first.image}
@@ -90,10 +97,23 @@ export default function ShoeCard({ variants, onAddToCart }: ShoeCardProps) {
           </div>
         )}
 
-        <h3 className="text-sm md:text-base font-bold text-slate-800 line-clamp-2 group-hover:text-rose-500 transition-colors duration-200">
+        <h3
+          className="text-sm md:text-base font-bold text-slate-800 line-clamp-2 group-hover:text-rose-500 transition-colors duration-200 cursor-pointer"
+          onClick={() => setIsDetailOpen(true)}
+        >
           {title}
         </h3>
-        {art && <p className="text-[11px] text-slate-400 mt-0.5">Art. {art}</p>}
+        <div className="flex items-center justify-between mt-0.5">
+          {art ? <p className="text-[11px] text-slate-400">Art. {art}</p> : <span />}
+          <button
+            type="button"
+            onClick={() => setIsDetailOpen(true)}
+            className="cursor-pointer text-[11px] font-bold text-rose-500 hover:text-rose-600 underline underline-offset-2"
+            id={`shoe-detail-btn-${first.modelKey}`}
+          >
+            Ver detalle
+          </button>
+        </div>
 
         {/* Selector de talle */}
         <div className="mt-3 mb-4 flex-1">
@@ -156,6 +176,17 @@ export default function ShoeCard({ variants, onAddToCart }: ShoeCardProps) {
           </button>
         </div>
       </div>
+
+      {isDetailOpen &&
+        createPortal(
+          <ShoeDetailModal
+            variants={variants}
+            initialSize={selected ? selected.size ?? null : null}
+            onClose={() => setIsDetailOpen(false)}
+            onAddToCart={onAddToCart}
+          />,
+          document.body
+        )}
     </div>
   );
 }
