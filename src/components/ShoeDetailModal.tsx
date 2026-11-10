@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ShoppingCart, X } from 'lucide-react';
 import { Product } from '../types';
-import { MEDIDAS, DESCRIPCION_ETAPA, DESCRIPCIONES } from '../data/calzadoInfo';
+import { TABLAS_MEDIDAS, TABLA_POR_MODELO, DESCRIPCION_ETAPA, DESCRIPCIONES } from '../data/calzadoInfo';
 
 interface ShoeDetailModalProps {
   // Todos los talles de un mismo modelo y color (un Product por talle)
@@ -69,7 +69,7 @@ export default function ShoeDetailModal({ variants, initialSize, onClose, onAddT
     first.description;
 
   // Tabla de medidas: solo los talles de este modelo que tengan medida cargada
-  const medidasEtapa = (first.subCategory && MEDIDAS[first.subCategory]) || {};
+  const medidasEtapa = (first.modelKey && TABLAS_MEDIDAS[TABLA_POR_MODELO[first.modelKey]]) || {};
   const filasMedidas = sorted.filter((v) => v.size !== undefined && medidasEtapa[v.size]);
 
   return (
@@ -230,4 +230,3 @@ export default function ShoeDetailModal({ variants, initialSize, onClose, onAddT
     </div>
   );
 }
-
