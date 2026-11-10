@@ -44,6 +44,18 @@ export default function ProductGrid({
   // estáticos de PRODUCTS como respaldo.
   const [realData, setRealData] = useState<Record<string, StockReal>>({});
 
+  // Si se entra por el link de un calzado (#calzado/...), mostrar esa categoría
+  useEffect(() => {
+    const irACalzado = () => {
+      if (window.location.hash.startsWith('#calzado/') && activeCategory !== 'calzado') {
+        onSelectCategory('calzado');
+      }
+    };
+    irACalzado();
+    window.addEventListener('hashchange', irACalzado);
+    return () => window.removeEventListener('hashchange', irACalzado);
+  }, [activeCategory, onSelectCategory]);
+
   // Trae el stock y precio real del backend una sola vez al montar
   useEffect(() => {
     let cancelado = false;
