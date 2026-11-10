@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { ShoppingCart, Package } from 'lucide-react';
 import { Product } from '../types';
@@ -17,6 +17,49 @@ export default function ShoeCard({ variants, onAddToCart }: ShoeCardProps) {
 
   const sorted = [...variants].sort((a, b) => (a.size ?? 0) - (b.size ?? 0));
   const first = sorted[0];
+
+  // Cada modelo tiene su propio link: parcoiris.com.ar/#calzado/<modelo>
+  const hashDetalle = `#calzado/${first.modelKey}`;
+  const empujoHistorial = useRef(false);
+
+  const abrirDetalle = () => {
+    if (window.location.hash !== hashDetalle) {
+      window.history.pushState(null, '', hashDetalle);
+      empujoHistorial.current = true;
+    }
+    setIsDetailOpen(true);
+  };
+
+  const cerrarDetalle = () => {
+    setIsDetailOpen(false);
+    if (window.location.hash === hashDetalle) {
+      if (empujoHistorial.current) {
+        // Volver a la dirección anterior (igual que el botón "atrás")
+        empujoHistorial.current = false;
+        window.history.back();
+      } else {
+        // Se entró directo por el link: solo sacar el #... de la dirección
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    }
+  };
+
+  // Abrir/cerrar la ficha cuando cambia la dirección (link directo, botón atrás)
+  useEffect(() => {
+    if (!first.modelKey) return;
+    const sincronizar = () => {
+      const abierto = window.location.hash === hashDetalle;
+      setIsDetailOpen(abierto);
+      if (!abierto) empujoHistorial.current = false;
+    };
+    sincronizar();
+    window.addEventListener('popstate', sincronizar);
+    window.addEventListener('hashchange', sincronizar);
+    return () => {
+      window.removeEventListener('popstate', sincronizar);
+      window.removeEventListener('hashchange', sincronizar);
+    };
+  }, [hashDetalle, first.modelKey]);
 
   const formatPrice = (price: number) =>
     new Intl.NumberFormat('es-AR', {
@@ -56,7 +99,7 @@ export default function ShoeCard({ variants, onAddToCart }: ShoeCardProps) {
       {/* Imagen (al tocarla se abre el detalle) */}
       <div
         className="relative aspect-square overflow-hidden bg-rose-50/20 flex items-center justify-center cursor-pointer"
-        onClick={() => setIsDetailOpen(true)}
+        onClick={abrirDetalle}
         id={`shoe-image-${first.modelKey}`}
       >
         {first.image ? (
@@ -99,7 +142,7 @@ export default function ShoeCard({ variants, onAddToCart }: ShoeCardProps) {
 
         <h3
           className="text-sm md:text-base font-bold text-slate-800 line-clamp-2 group-hover:text-rose-500 transition-colors duration-200 cursor-pointer"
-          onClick={() => setIsDetailOpen(true)}
+          onClick={abrirDetalle}
         >
           {title}
         </h3>
@@ -107,7 +150,7 @@ export default function ShoeCard({ variants, onAddToCart }: ShoeCardProps) {
           {art ? <p className="text-[11px] text-slate-400">Art. {art}</p> : <span />}
           <button
             type="button"
-            onClick={() => setIsDetailOpen(true)}
+            onClick={abrirDetalle}
             className="cursor-pointer text-[11px] font-bold text-rose-500 hover:text-rose-600 underline underline-offset-2"
             id={`shoe-detail-btn-${first.modelKey}`}
           >
@@ -182,7 +225,7 @@ export default function ShoeCard({ variants, onAddToCart }: ShoeCardProps) {
           <ShoeDetailModal
             variants={variants}
             initialSize={selected ? selected.size ?? null : null}
-            onClose={() => setIsDetailOpen(false)}
+            onClose={cerrarDetalle}
             onAddToCart={onAddToCart}
           />,
           document.body
