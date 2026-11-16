@@ -7,7 +7,29 @@ import CheckoutModal from './components/CheckoutModal';
 import OrderHistory from './components/OrderHistory';
 import { Product, CartItem, Order } from './types';
 import { PRODUCTS } from './data/products';
-import { ShieldCheck, Truck, PhoneCall, HelpCircle, Heart, Instagram } from 'lucide-react';
+import { ShieldCheck, Truck, PhoneCall, HelpCircle, Heart, Instagram, CheckCircle2 } from 'lucide-react';
+
+// Página de "compra finalizada" (dirección fija, para medir ventas)
+const RUTA_CONFIRMACION = '/pedido-confirmado';
+const CLAVE_PEDIDO_OK = 'pedido_confirmado_ok';
+
+// Solo se puede ver la página si se acaba de completar una compra.
+// La marca se borra apenas se usa: si se recarga la página o se entra
+// directo por el link, vuelve a la tienda y no se cuenta otra venta.
+function leerConfirmacionInicial(): boolean {
+  if (window.location.pathname !== RUTA_CONFIRMACION) return false;
+  let autorizado = false;
+  try {
+    autorizado = sessionStorage.getItem(CLAVE_PEDIDO_OK) === '1';
+    sessionStorage.removeItem(CLAVE_PEDIDO_OK);
+  } catch (e) {
+    autorizado = false;
+  }
+  if (!autorizado) {
+    window.history.replaceState(null, '', '/');
+  }
+  return autorizado;
+}
 
 export default function App() {
   // 1. Core States
@@ -85,6 +107,7 @@ export default function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [isReturnPolicyOpen, setIsReturnPolicyOpen] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState<boolean>(leerConfirmacionInicial);
   
   // 2. Cache Synchronization
   useEffect(() => {
@@ -157,6 +180,17 @@ export default function App() {
     setOrders((prev) => [newOrder, ...prev]);
     // Clear cart
     setCart([]);
+
+    // Guardar el pedido y vaciar el carrito ya mismo (la página se va a recargar)
+    try {
+      localStorage.setItem('peque_orders', JSON.stringify([newOrder, ...orders]));
+      localStorage.setItem('peque_cart', JSON.stringify([]));
+      sessionStorage.setItem(CLAVE_PEDIDO_OK, '1');
+    } catch (e) {
+      // Si el navegador no deja guardar, igual seguimos con la redirección
+    }
+    // Ir a la página de confirmación con su propia dirección
+    window.location.assign(RUTA_CONFIRMACION);
   };
 
   const handleUpdateOrderStatus = (orderId: string, nextStatus: Order['status']) => {
@@ -196,8 +230,8 @@ export default function App() {
         cartItems={cart}
         onOpenCart={() => setIsCartOpen(true)}
         activeCategory={activeCategory}
-        onSelectCategory={setActiveCategory}
-        onNavigateToView={setCurrentView}
+        onSelectCategory={(c) => { setShowConfirmation(false); setActiveCategory(c); }}
+        onNavigateToView={(v) => { setShowConfirmation(false); setCurrentView(v); }}
         currentView={currentView}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
@@ -205,7 +239,49 @@ export default function App() {
 
       {/* Main Content Viewport */}
       <main className="flex-1 w-full max-w-7xl mx-auto px-4 md:px-8 py-8">
-        {currentView === 'shop' ? (
+        {showConfirmation && currentView === 'shop' ? (
+          <div className="max-w-xl mx-auto bg-white border border-rose-100 rounded-3xl p-8 md:p-10 text-center shadow-sm animate-fade-in" id="pedido-confirmado">
+            <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-500 mx-auto mb-4">
+              <CheckCircle2 className="w-9 h-9" />
+            </div>
+            <h1 className="text-2xl font-black text-slate-800">¡Gracias por tu compra!</h1>
+            <p className="text-sm text-slate-500 mt-2">
+              Recibimos tu pedido y ya lo estamos preparando.
+            </p>
+            {orders[0] && (
+              <div className="mt-5 text-sm text-slate-600 space-y-1">
+                <p>Número de pedido: <span className="font-bold text-slate-800">{orders[0].id}</span></p>
+                {orders[0].trackingNumber && (
+                  <p>Código de seguimiento: <span className="font-bold text-slate-800">{orders[0].trackingNumber}</span></p>
+                )}
+              </div>
+            )}
+            <div className="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+              {orders[0] && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    window.history.replaceState(null, '', '/');
+                    setShowConfirmation(false);
+                    setActiveOrderSearchId(orders[0].id);
+                    setCurrentView('tracking');
+                  }}
+                  className="cursor-pointer h-11 px-6 rounded-full bg-rose-400 hover:bg-rose-500 text-white font-bold text-sm"
+                  id="confirmacion-ver-seguimiento"
+                >
+                  Ver mi pedido
+                </button>
+              )}
+              <a
+                href="/"
+                className="h-11 px-6 rounded-full border border-rose-200 text-rose-500 hover:bg-rose-50 font-bold text-sm inline-flex items-center justify-center"
+                id="confirmacion-seguir-comprando"
+              >
+                Seguir comprando
+              </a>
+            </div>
+          </div>
+        ) : currentView === 'shop' ? (
           <div className="space-y-8 animate-fade-in">
             {/* Show carousel only on main home catalog (no filter) */}
             {!activeCategory && (
@@ -383,4 +459,3 @@ export default function App() {
     </div>
   );
 }
-
