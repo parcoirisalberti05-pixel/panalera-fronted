@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Lock, CreditCard, CheckCircle2, ShieldAlert, ShoppingBag, Truck, Package } from 'lucide-react';
+import { X, CheckCircle2, ShoppingBag, Truck, Package } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CartItem, ShippingAddress, PaymentInfo, Order, TrackingStep } from '../types';
 
@@ -27,12 +27,8 @@ export default function CheckoutModal({
   const [email, setEmail] = useState('');
 
   // Payment Form State
-  const [paymentMethod, setPaymentMethod] = useState<'card' | 'efectivo' | 'transfer'>('card');
+  const [paymentMethod, setPaymentMethod] = useState<'efectivo' | 'transfer'>('efectivo');
 const [cashAmount, setCashAmount] = useState('');
-  const [cardNumber, setCardNumber] = useState('');
-  const [cardName, setCardName] = useState('');
-  const [expiry, setExpiry] = useState('');
-  const [cvc, setCvc] = useState('');
 
   // Shipping calculation state
   const [shippingCost, setShippingCost] = useState<number | null>(null);
@@ -51,15 +47,6 @@ const [cashAmount, setCashAmount] = useState('');
   const total = cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
 const finalTotal = total + (shippingCost || 0);
   
-  // Simple card brand detector
-  const getCardBrand = (num: string) => {
-    const cleanNum = num.replace(/\D/g, '');
-    if (cleanNum.startsWith('4')) return 'Visa';
-    if (cleanNum.startsWith('5')) return 'Mastercard';
-    if (cleanNum.startsWith('3')) return 'American Express';
-    return 'Tarjeta';
-  };
-
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('es-AR', {
       style: 'currency',
@@ -149,12 +136,6 @@ useEffect(() => {
       return false;
     }
   }
-  if (paymentMethod === 'card') {
-    if (!cardNumber || !cardName || !expiry || !cvc) {
-      alert('Por favor complete todos los datos de su tarjeta.');
-      return false;
-    }
-  }
    if (paymentMethod === 'efectivo') {
   const montoEfectivo = Number(cashAmount.replace(/\D/g, '')) || 0;
   if (montoEfectivo < finalTotal) {
@@ -172,13 +153,8 @@ useEffect(() => {
     setStage('processing');
 
     try {
-      const cardBrand = getCardBrand(cardNumber);
-      const last4 = cardNumber.replace(/\D/g, '').slice(-4) || '8249';
-
       const metodoPagoTexto =
-        paymentMethod === 'card' ? cardBrand :
-        paymentMethod === 'efectivo' ? 'Efectivo' :
-        'Transferencia Bancaria';
+        paymentMethod === 'efectivo' ? 'Efectivo' : 'Transferencia Bancaria';
 
       const response = await fetch('https://panalera-backend-production.up.railway.app/api/pedidos', {
         method: 'POST',
@@ -211,7 +187,7 @@ useEffect(() => {
         {
           date: new Date().toLocaleDateString('es-AR', { hour: '2-digit', minute: '2-digit' }),
           status: 'pendiente',
-          description: '¡Pago aprobado! Tu pedido ha sido recibido y está pendiente de validación.',
+          description: 'Recibimos tu pedido. Está pendiente de confirmación por parte del local.',
           completed: true
         },
         {
@@ -243,7 +219,7 @@ useEffect(() => {
         shippingAddress: shipping,
         paymentMethod: {
           cardBrand: metodoPagoTexto,
-          last4: paymentMethod === 'card' ? last4 : 'MP-Wallet'
+          last4: 'Pago pendiente'
         },
         trackingNumber: pedidoCreado.numero_seguimiento,
         trackingHistory: initialHistory
@@ -284,9 +260,9 @@ useEffect(() => {
             {/* Header */}
             <div className="p-4 md:p-6 border-b border-rose-50 flex items-center justify-between bg-rose-50/10">
               <div className="flex items-center gap-2">
-                <Lock className="w-5 h-5 text-emerald-600" />
-                <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider">
-                  Pago Seguro SSL
+                <ShoppingBag className="w-5 h-5 text-rose-400" />
+                <span className="text-xs font-bold text-rose-500 bg-rose-50 px-3 py-1 rounded-full uppercase tracking-wider">
+                  Finalizar pedido
                 </span>
               </div>
               {stage !== 'processing' && (
@@ -450,20 +426,8 @@ useEffect(() => {
 
                     {/* Payment Gateways Selection */}
                     <div>
-                      <h3 className="text-sm font-black text-slate-800 uppercase tracking-wider mb-3">3. Pasarela de Pago Segura</h3>
-                      <div className="grid grid-cols-3 gap-2.5 mb-4">
-                        <button
-                          type="button"
-                          onClick={() => setPaymentMethod('card')}
-                          className={`cursor-pointer p-3.5 border rounded-2xl flex flex-col items-center gap-1.5 transition-all ${
-                            paymentMethod === 'card'
-                              ? 'border-rose-400 bg-rose-50/50 text-rose-500 font-bold shadow-xs'
-                              : 'border-rose-50 bg-white text-slate-500 hover:border-rose-200'
-                          }`}
-                        >
-                          <CreditCard className="w-4 h-4 text-rose-400" />
-                          <span className="text-[10px] font-bold">Tarjeta</span>
-                        </button>
+                      <h3 className="text-sm font-black text-slate-800 uppercase tracking-wider mb-3">3. Forma de Pago</h3>
+                      <div className="grid grid-cols-2 gap-2.5 mb-4">
                         <button
   type="button"
   onClick={() => setPaymentMethod('efectivo')}
@@ -489,76 +453,6 @@ useEffect(() => {
                           <span className="text-[10px] font-bold">Transferencia</span>
                         </button>
                       </div>
-
-                      {/* Card Details form */}
-                      {paymentMethod === 'card' && (
-                        <div className="space-y-3.5 bg-rose-50/20 p-4 md:p-5 rounded-3xl border border-rose-50">
-                          <div className="flex justify-between items-center">
-                            <span className="text-xs font-bold text-slate-500">Datos de la Tarjeta</span>
-                            <span className="text-[10px] bg-rose-100 text-rose-600 px-2.5 py-1 rounded-full font-bold uppercase tracking-wider">
-                              {getCardBrand(cardNumber)}
-                            </span>
-                          </div>
-                          <div>
-                            <label className="block text-[10px] font-bold text-slate-400 mb-0.5">Número de Tarjeta</label>
-                            <input
-                              type="text"
-                              required={paymentMethod === 'card'}
-                              placeholder="4000 1234 5678 9010"
-                              value={cardNumber}
-                              maxLength={19}
-                              onChange={(e) => {
-                                const val = e.target.value.replace(/\s?/g, '').replace(/(\d{4})/g, '$1 ').trim();
-                                setCardNumber(val);
-                              }}
-                              className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition shadow-xs"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-[10px] font-bold text-slate-400 mb-0.5">Nombre en la Tarjeta</label>
-                            <input
-                              type="text"
-                              required={paymentMethod === 'card'}
-                              placeholder="JUAN PEREZ"
-                              value={cardName}
-                              onChange={(e) => setCardName(e.target.value.toUpperCase())}
-                              className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition shadow-xs"
-                            />
-                          </div>
-                          <div className="grid grid-cols-2 gap-3">
-                            <div>
-                              <label className="block text-[10px] font-bold text-slate-400 mb-0.5">Vencimiento</label>
-                              <input
-                                type="text"
-                                required={paymentMethod === 'card'}
-                                placeholder="MM/AA"
-                                maxLength={5}
-                                value={expiry}
-                                onChange={(e) => {
-                                  let val = e.target.value;
-                                  if (val.length === 2 && !val.includes('/')) {
-                                    val += '/';
-                                  }
-                                  setExpiry(val);
-                                }}
-                                className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition shadow-xs"
-                              />
-                            </div>
-                            <div>
-                              <label className="block text-[10px] font-bold text-slate-400 mb-0.5">CVV (Clave)</label>
-                              <input
-                                type="password"
-                                required={paymentMethod === 'card'}
-                                placeholder="***"
-                                maxLength={4}
-                                value={cvc}
-                                onChange={(e) => setCvc(e.target.value.replace(/\D/g, ''))}
-                                className="w-full h-11 px-4 text-xs md:text-sm bg-white border border-rose-100 rounded-full focus:outline-none focus:ring-2 focus:ring-rose-200 focus:border-rose-400 transition shadow-xs"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      )}
 
                      {/* Cash Payment info */}
 {paymentMethod === 'efectivo' && (
@@ -689,25 +583,14 @@ useEffect(() => {
   )}
 </div>
                    
-                    {/* Security Trust badge */}
-                    <div className="border border-emerald-100 bg-emerald-50/30 rounded-3xl p-5 text-xs space-y-2">
-                      <div className="flex items-center gap-1.5 font-bold text-emerald-800">
-                        <ShieldAlert className="w-4 h-4 text-emerald-600" />
-                        <span>Compra Certificada PCI-DSS</span>
-                      </div>
-                      <p className="text-slate-500 leading-relaxed font-medium">
-                        Nuestras pasarelas de pago cuentan con encriptación avanzada AES-256 de extremo a extremo, resguardando tu privacidad y seguridad bancaria.
-                      </p>
-                    </div>
-
                     {/* Submit Pay Button */}
                     <button
                       type="submit"
                       className="cursor-pointer w-full h-12 bg-rose-400 hover:bg-rose-500 active:scale-[0.98] text-white font-black text-sm rounded-full flex items-center justify-center gap-2 transition duration-200 shadow-md shadow-rose-200"
                       id="pay-submit-btn"
                     >
-                      <Lock className="w-4 h-4" />
-                      <span>Confirmar y Pagar {formatPrice(finalTotal)}</span>
+                      <CheckCircle2 className="w-4 h-4" />
+                      <span>Confirmar pedido {formatPrice(finalTotal)}</span>
                     </button>
                   </div>
                 </form>
@@ -719,12 +602,12 @@ useEffect(() => {
                   <div className="relative flex items-center justify-center">
                     {/* Ring */}
                     <div className="w-16 h-16 rounded-full border-4 border-slate-100 border-t-rose-400 animate-spin"></div>
-                    <Lock className="w-6 h-6 text-rose-400 absolute" />
+                    <Package className="w-6 h-6 text-rose-400 absolute" />
                   </div>
                   <div className="space-y-1">
-                    <h3 className="text-lg font-black text-slate-800">Procesando Pago Seguro...</h3>
+                    <h3 className="text-lg font-black text-slate-800">Enviando tu pedido...</h3>
                     <p className="text-xs text-slate-400 max-w-sm font-medium">
-                      Estamos contactando a la pasarela de pago para validar la transacción de forma encriptada SSL. Por favor no cierres esta ventana.
+                      Estamos registrando tu pedido. Por favor no cierres esta ventana.
                     </p>
                   </div>
                 </div>
@@ -738,9 +621,9 @@ useEffect(() => {
                   </div>
 
                   <div className="space-y-2">
-                    <h2 className="text-2xl font-black text-slate-800">¡Compra Realizada con Éxito!</h2>
+                    <h2 className="text-2xl font-black text-slate-800">¡Pedido recibido!</h2>
                     <p className="text-xs text-slate-400 font-medium leading-relaxed">
-                      Te enviamos un correo electrónico a <strong>{email}</strong> con el comprobante de pago y los detalles del envío.
+                      Registramos tu pedido a nombre de <strong>{email}</strong>. Guardá tu número de seguimiento para consultar el estado.
                     </p>
                   </div>
 
