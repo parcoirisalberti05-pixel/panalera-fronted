@@ -341,8 +341,8 @@ export default function App() {
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-white">Transacciones 100% Seguras</h4>
-                <p className="text-xs text-slate-400 mt-0.5">Pasarelas encriptadas con protocolos SSL modernos.</p>
+                <h4 className="text-sm font-bold text-white">Compra Simple y Segura</h4>
+                <p className="text-xs text-slate-400 mt-0.5">Pagás en efectivo al recibir o por transferencia.</p>
               </div>
             </div>
 
