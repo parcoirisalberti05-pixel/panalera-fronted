@@ -68,17 +68,20 @@ const finalTotal = total + (shippingCost || 0);
   const dias = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
   const man = new Date(now);
   man.setDate(man.getDate() + 1);
-  const mananaTxt = `mañana ${dias[man.getDay()]} ${man.getDate()}/${man.getMonth() + 1}`;
-  if (horaActual < 13) {
-    return [
-      { key: 'hoy_tarde', texto: 'hoy de 15 a 21:30hs' },
-      { key: 'man_manana', texto: `${mananaTxt} de 9:30 a 13:00hs` }
-    ];
+  const fechaTxt = (d: Date) => `${dias[d.getDay()]} ${d.getDate()}/${d.getMonth() + 1}`;
+  // Los domingos se entrega solo a la mañana, de 10:00 a 13:00
+  const horarioManana = (d: Date) => (d.getDay() === 0 ? '10:00 a 13:00hs' : '9:30 a 13:00hs');
+  const opciones: { key: string; texto: string }[] = [];
+  // Antes de las 13:00 y hoy no es domingo: se ofrece hoy a la tarde
+  if (horaActual < 13 && now.getDay() !== 0) {
+    opciones.push({ key: 'hoy_tarde', texto: `hoy ${fechaTxt(now)} de 15 a 21:30hs` });
   }
-  return [
-    { key: 'man_manana', texto: `${mananaTxt} de 9:30 a 13:00hs` },
-    { key: 'man_tarde', texto: `${mananaTxt} de 15 a 21:30hs` }
-  ];
+  opciones.push({ key: 'man_manana', texto: `${fechaTxt(man)} de ${horarioManana(man)}` });
+  // Después de las 13:00 también se ofrece la tarde del día siguiente (salvo domingo)
+  if (horaActual >= 13 && man.getDay() !== 0) {
+    opciones.push({ key: 'man_tarde', texto: `${fechaTxt(man)} de 15 a 21:30hs` });
+  }
+  return opciones;
 };
 const slotOptions = getSlotOptions();
 const slotActual = slotOptions.find(o => o.key === deliverySlot) || slotOptions[0];
