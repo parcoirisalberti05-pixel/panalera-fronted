@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, CheckCircle2, ShoppingBag, Truck, Package } from 'lucide-react';
+import { X, CheckCircle2, ShoppingBag, Truck, Package, Trash2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { CartItem, ShippingAddress, PaymentInfo, Order, TrackingStep } from '../types';
 
@@ -8,13 +8,15 @@ interface CheckoutModalProps {
   onClose: () => void;
   cartItems: CartItem[];
   onOrderCompleted: (order: Order) => void;
+  onRemoveItem?: (productId: string) => void;
 }
 
 export default function CheckoutModal({
   isOpen,
   onClose,
   cartItems,
-  onOrderCompleted
+  onOrderCompleted,
+  onRemoveItem
 }: CheckoutModalProps) {
   // Shipping Form State
   const [shipping, setShipping] = useState<ShippingAddress>({
@@ -42,6 +44,11 @@ const [cashAmount, setCashAmount] = useState('');
   // 'form' -> 'processing' -> 'success'
   const [stage, setStage] = useState<'form' | 'processing' | 'success'>('form');
   const [createdOrder, setCreatedOrder] = useState<Order | null>(null);
+
+  // Si se quitan todos los productos, cerrar el pago
+  useEffect(() => {
+    if (isOpen && stage === 'form' && cartItems.length === 0) onClose();
+  }, [isOpen, stage, cartItems.length]);
 
   // Computed values
   const total = cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
@@ -528,6 +535,17 @@ useEffect(() => {
                               <p className="text-slate-400 text-[10px]">{item.quantity} un. x {formatPrice(item.product.price)}</p>
                             </div>
                             <span className="font-black text-slate-800">{formatPrice(item.product.price * item.quantity)}</span>
+                            {onRemoveItem && (
+                              <button
+                                type="button"
+                                onClick={() => onRemoveItem(item.product.id)}
+                                className="cursor-pointer p-1.5 rounded-full text-slate-400 hover:text-rose-500 hover:bg-rose-50 transition flex-shrink-0"
+                                title="Quitar del pedido"
+                                aria-label={`Quitar ${item.product.name} del pedido`}
+                              >
+                                <Trash2 className="w-4 h-4" />
+                              </button>
+                            )}
                           </div>
                         ))}
                       </div>
