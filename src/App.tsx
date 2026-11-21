@@ -336,6 +336,7 @@ export default function App() {
         onClose={() => setIsCheckoutOpen(false)}
         cartItems={cart}
         onOrderCompleted={handleOrderCompleted}
+        onRemoveItem={handleRemoveItem}
       />
 
       {/* Trust & Help Footer Banner */}
