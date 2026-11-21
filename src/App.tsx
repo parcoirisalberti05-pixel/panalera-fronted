@@ -99,6 +99,13 @@ export default function App() {
   });
 
   const [activeCategory, setActiveCategory] = useState<'pañales' | 'higiene' | 'ropa' | 'calzado' | 'rodados' | 'alimentacion' | 'accesorios' | null>(null);
+
+  // Al cambiar de categoría, volver arriba de todo
+  const primeraCategoria = React.useRef(true);
+  useEffect(() => {
+    if (primeraCategoria.current) { primeraCategoria.current = false; return; }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [activeCategory]);
   const [currentView, setCurrentView] = useState<'shop' | 'tracking'>('shop');
   const [activeOrderSearchId, setActiveOrderSearchId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
