@@ -39,6 +39,7 @@ const [cashAmount, setCashAmount] = useState('');
   const [calculatingShipping, setCalculatingShipping] = useState(false);
   const [shippingCalculated, setShippingCalculated] = useState(false);
   const [deliveryMethod, setDeliveryMethod] = useState<'domicilio' | 'retiro'>('domicilio');
+  const [deliverySlot, setDeliverySlot] = useState('');
   
   // Checkout Stages
   // 'form' -> 'processing' -> 'success'
@@ -61,12 +62,27 @@ const finalTotal = total + (shippingCost || 0);
       minimumFractionDigits: 0
     }).format(price);
   };
-  const getDeliveryMessage = () => {
+  const getSlotOptions = () => {
   const now = new Date();
   const horaActual = now.getHours() + now.getMinutes() / 60;
-  const dia = horaActual < 13 ? 'hoy' : 'mañana';
-  return `Tu pedido se entrega ${dia} de 15 a 21:30hs`;
+  const dias = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+  const man = new Date(now);
+  man.setDate(man.getDate() + 1);
+  const mananaTxt = `mañana ${dias[man.getDay()]} ${man.getDate()}/${man.getMonth() + 1}`;
+  if (horaActual < 13) {
+    return [
+      { key: 'hoy_tarde', texto: 'hoy de 15 a 21:30hs' },
+      { key: 'man_manana', texto: `${mananaTxt} de 9:30 a 13:00hs` }
+    ];
+  }
+  return [
+    { key: 'man_manana', texto: `${mananaTxt} de 9:30 a 13:00hs` },
+    { key: 'man_tarde', texto: `${mananaTxt} de 15 a 21:30hs` }
+  ];
 };
+const slotOptions = getSlotOptions();
+const slotActual = slotOptions.find(o => o.key === deliverySlot) || slotOptions[0];
+const getDeliveryMessage = () => `Tu pedido se entrega ${slotActual.texto}`;
 
 const getRetiroMessage = () => {
   return 'Lunes a sábado de 9:15 a 13:15hs y de 17:00 a 20:30hs.|Domingo de 9:45 a 13:15hs';
@@ -180,7 +196,9 @@ useEffect(() => {
             cantidad: item.quantity
           })),
           total: finalTotal,
-          metodo_pago: metodoPagoTexto
+          metodo_pago: deliveryMethod === 'domicilio'
+            ? `${metodoPagoTexto} | Entrega: ${slotActual.texto}`
+            : metodoPagoTexto
         })
       });
 
@@ -419,6 +437,27 @@ useEffect(() => {
 {!calculatingShipping && !shippingCalculated && !shippingMessage && (
   <p className="text-xs text-slate-400">El envío se calcula solo al completar dirección y ciudad.</p>
 )}
+  </div>
+)}
+   {deliveryMethod === 'domicilio' && (
+  <div className="sm:col-span-2">
+    <label className="block text-xs font-bold text-slate-500 mb-1">Horario de entrega</label>
+    <div className="grid grid-cols-1 gap-2">
+      {slotOptions.map((op) => (
+        <button
+          key={op.key}
+          type="button"
+          onClick={() => setDeliverySlot(op.key)}
+          className={`cursor-pointer text-left px-4 py-2.5 rounded-2xl border text-xs font-bold transition ${
+            slotActual.key === op.key
+              ? 'border-rose-400 bg-rose-50/50 text-rose-500'
+              : 'border-rose-100 bg-white text-slate-500 hover:border-rose-200'
+          }`}
+        >
+          {slotActual.key === op.key ? '● ' : '○ '}{op.texto.charAt(0).toUpperCase() + op.texto.slice(1)}
+        </button>
+      ))}
+    </div>
   </div>
 )}
    {deliveryMethod === 'retiro' && (
